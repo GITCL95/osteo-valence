@@ -50,24 +50,183 @@ html {
   outline-offset: 2px;
 }
 
-/* Animation d'apparition au scroll (CSS pure) */
+/* Animations au scroll (IntersectionObserver ajoute .visible) */
+[data-animate="fade-up"] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-animate="fade-up"].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-animate="fade-left"] {
+  opacity: 0;
+  transform: translateX(1.5rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-animate="fade-left"].visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-animate="scale-in"] {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+[data-animate="scale-in"].visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-animate="slide-up"] {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-animate="slide-up"].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger : délai progressif pour les enfants */
+[data-animate="stagger"] > * {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+[data-animate="stagger"].visible > *:nth-child(1) { transition-delay: 0.05s; }
+[data-animate="stagger"].visible > *:nth-child(2) { transition-delay: 0.1s; }
+[data-animate="stagger"].visible > *:nth-child(3) { transition-delay: 0.15s; }
+[data-animate="stagger"].visible > *:nth-child(4) { transition-delay: 0.2s; }
+[data-animate="stagger"].visible > *:nth-child(5) { transition-delay: 0.25s; }
+[data-animate="stagger"].visible > *:nth-child(6) { transition-delay: 0.3s; }
+[data-animate="stagger"].visible > *:nth-child(7) { transition-delay: 0.35s; }
+[data-animate="stagger"].visible > *:nth-child(8) { transition-delay: 0.4s; }
+[data-animate="stagger"].visible > *:nth-child(9) { transition-delay: 0.45s; }
+[data-animate="stagger"].visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section reveal (fallback sans JS) */
 .section-reveal {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
-@supports (animation-timeline: view()) {
-  .section-reveal {
+
+/* Hero parallax (CSS only) */
+.hero-parallax {
+  transform: translateZ(-1px) scale(1.1);
+  will-change: transform;
+}
+
+/* Transitions hover globales */
+a, button {
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Floating CTA sous-boutons */
+.floating-cta-sub {
+  animation: floatIn 0.3s ease forwards;
+}
+@keyframes floatIn {
+  from {
     opacity: 0;
-    transform: translateY(1.5rem);
-    animation: sectionReveal 0.7s ease forwards;
-    animation-timeline: view();
-    animation-range: entry 0% entry 40%;
+    transform: scale(0.9) translateY(4px);
   }
-}
-@keyframes sectionReveal {
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Ombres cartes et relief */
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+.card-hover {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Cartes services : effet 3D au hover */
+.card-3d {
+  transform: perspective(1000px) rotateY(0) rotateX(0);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card-3d:hover {
+  transform: perspective(1000px) rotateY(-2deg) rotateX(2deg) translateY(-4px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* CTA : scale + ombre au hover */
+.btn-cta {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-cta:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Lien Lire la suite : flèche décale */
+.link-lire-la-suite {
+  transition: transform 0.3s ease;
+}
+.link-lire-la-suite:hover {
+  transform: translateX(4px);
+}
+
+/* Badges quartiers : bounce/scale au hover */
+.badge-quartier {
+  transition: transform 0.3s ease;
+}
+.badge-quartier:hover {
+  transform: scale(1.05);
+}
+
+/* Icônes avantages : rotation au hover */
+.avantage-icon-wrap {
+  transition: transform 0.3s ease;
+}
+.avantage-icon-wrap:hover {
+  transform: rotate(5deg);
+}
+
+/* Étoiles témoignages : apparition stagger */
+.testimonial-star {
+  opacity: 0;
+  animation: starIn 0.4s ease forwards;
+}
+.testimonial-stars .testimonial-star:nth-child(1) { animation-delay: 0ms; }
+.testimonial-stars .testimonial-star:nth-child(2) { animation-delay: 100ms; }
+.testimonial-stars .testimonial-star:nth-child(3) { animation-delay: 200ms; }
+.testimonial-stars .testimonial-star:nth-child(4) { animation-delay: 300ms; }
+.testimonial-stars .testimonial-star:nth-child(5) { animation-delay: 400ms; }
+@keyframes starIn {
+  to { opacity: 1; }
+}
+
+/* Désactiver animations si l'utilisateur préfère moins de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  .card-hover:hover,
+  .card-3d,
+  .card-3d:hover,
+  .btn-cta:hover,
+  .link-lire-la-suite:hover,
+  .badge-quartier:hover,
+  .avantage-icon-wrap:hover {
+    transform: none;
+  }
+  .testimonial-star {
+    animation: none;
+    opacity: 1;
   }
 }

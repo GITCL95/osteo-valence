@@ -12,7 +12,7 @@ export default function FaqAccordion({ items }: { items: FaqItem[] }) {
       {items.map((item, i) => (
         <div
           key={i}
-          className="rounded-xl bg-white border border-bluegray/20 shadow-sm overflow-hidden"
+          className="rounded-xl bg-white border border-bluegray/20 card-shadow overflow-hidden"
         >
           <button
             type="button"

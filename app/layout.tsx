@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import CookieBanner from "@/components/CookieBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -66,6 +69,14 @@ const medicalBusinessSchema = {
   ],
   priceRange: "50€ - 75€",
   medicalSpecialty: "Osteopathic",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    bestRating: "5",
+    worstRating: "1",
+    ratingCount: "127",
+    reviewCount: "127",
+  },
 };
 
 const faqSchema = {
@@ -173,7 +184,10 @@ export default function RootLayout({
             __html: JSON.stringify(websiteSchema),
           }}
         />
+        <NavBar />
+        <Breadcrumbs />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

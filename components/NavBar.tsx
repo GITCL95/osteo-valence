@@ -19,7 +19,7 @@ export default function NavBar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           navScrolled
-            ? "bg-offwhite/95 shadow-md backdrop-blur"
+            ? "bg-offwhite/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
             : "bg-black/40 backdrop-blur-sm"
         }`}
         aria-label="Navigation principale"

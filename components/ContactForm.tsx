@@ -169,7 +169,7 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="w-full rounded-full bg-sage py-3.5 text-base font-medium text-white shadow transition hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
+        className="btn-cta w-full rounded-full bg-sage py-3.5 text-base font-medium text-white shadow hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
       >
         Demander un rendez-vous
       </button>

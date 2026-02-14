@@ -10,13 +10,24 @@ const BASE = "https://www.osteo-valence.fr";
 const canonical = `${BASE}/osteopathe-bebe`;
 
 export const metadata: Metadata = {
-  title: "Ostéopathe Bébé & Nourrisson à Valence (26000) | Coliques, Torticolis, Plagiocéphalie",
-  description: "Ostéopathe bébé et nourrisson à Valence 26000. Coliques, torticolis, plagiocéphalie, sommeil. Techniques douces. Prenez RDV.",
+  title: "Ostéopathe bébé Valence | Cabinet D.O.",
+  description: "Ostéopathe bébé et nourrisson à Valence (26000). Coliques, torticolis, plagiocéphalie, sommeil. Techniques douces dès la naissance. Prenez RDV au cabinet.",
   alternates: { canonical },
-  openGraph: { title: "Ostéopathe Bébé & Nourrisson à Valence (26000) | Cabinet D.O.", description: "Ostéopathe bébé à Valence. Coliques, torticolis, tête plate. Prenez RDV.", url: canonical, siteName: "Ostéopathe Valence", locale: "fr_FR", type: "website" },
+  openGraph: {
+    title: "Ostéopathe bébé Valence | Cabinet D.O.",
+    description: "Ostéopathe bébé à Valence. Coliques, torticolis, plagiocéphalie. Techniques douces. Prenez RDV.",
+    url: canonical,
+    siteName: "Ostéopathe Valence",
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: `${BASE}/og-default.jpg`, width: 1200, height: 630, alt: "Cabinet ostéopathe bébé à Valence" }],
+  },
+  twitter: { card: "summary_large_image", images: [`${BASE}/og-default.jpg`] },
 };
 
 const medicalSchema = { "@context": "https://schema.org", "@type": "MedicalBusiness", name: "Ostéopathe Valence", description: "Cabinet d'ostéopathie D.O. à Valence (26000). Ostéopathe bébé et nourrisson : coliques, torticolis, plagiocéphalie.", url: canonical, address: { "@type": "PostalAddress", streetAddress: "45 avenue Victor Hugo", addressLocality: "Valence", postalCode: "26000", addressRegion: "Auvergne-Rhône-Alpes", addressCountry: "FR" }, geo: { "@type": "GeoCoordinates", latitude: 44.9334, longitude: 4.8924 }, medicalSpecialty: "PediatricOsteopathicMedicine", priceRange: "50€" };
+
+const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Ostéopathie nourrissons", description: "Prise en charge des coliques, torticolis, plagiocéphalie et troubles du sommeil du nourrisson à Valence.", provider: { "@type": "MedicalBusiness", name: "Ostéopathe Valence", url: BASE }, areaServed: { "@type": "City", name: "Valence" } };
 
 const FAQ_ITEMS = [
   { q: "À quel âge amener mon bébé chez l'ostéopathe ?", a: "Dès les premiers jours de vie. De nombreux parents consultent après l'accouchement pour un bilan, surtout en cas d'accouchement difficile, de césarienne ou de ventouse. L'ostéopathe utilise des techniques très douces et adaptées au nourrisson." },
@@ -55,6 +66,7 @@ export default function OsteopatheBebePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <FloatingCTA />
       <main className="min-h-screen bg-offwhite text-foreground pt-20">
@@ -75,7 +87,7 @@ export default function OsteopatheBebePage() {
               <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Ostéopathie pour bébé à Valence : un accompagnement doux et adapté</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto" aria-hidden />
               <div className="mt-10 space-y-6 text-gray-600 leading-relaxed">
-                <p>Consulter un ostéopathe pour son bébé à Valence (26000) est une démarche de plus en plus courante. L&apos;accouchement, même bien vécu, peut laisser des tensions au niveau du crâne, du bassin ou du cou du nourrisson. Ces tensions peuvent se manifester par des pleurs, des coliques, un torticolis, une tête qui se déforme (plagiocéphalie) ou des difficultés à s&apos;endormir. L&apos;ostéopathe D.O. utilise des techniques extrêmement douces, sans craquement, adaptées à la fragilité du bébé. Le cabinet avenue Victor Hugo à Valence est un lieu calme et rassurant pour les familles.</p>
+                <p>Consulter un ostéopathe pour son bébé à Valence (26000) est une démarche de plus en plus courante. L&apos;accouchement, même bien vécu, peut laisser des tensions au niveau du crâne, du bassin ou du cou du nourrisson. Ces tensions peuvent se manifester par des pleurs, des coliques, un torticolis, une tête qui se déforme (plagiocéphalie) ou des difficultés à s&apos;endormir. Souvent les parents viennent après un suivi <Link href="/osteopathe-femme-enceinte" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathie femme enceinte</Link> pendant la grossesse, ou pour des douleurs qui concernent aussi l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe du dos</Link>. L&apos;ostéopathe D.O. utilise des techniques extrêmement douces, sans craquement, adaptées à la fragilité du bébé. Le cabinet avenue Victor Hugo à Valence est un lieu calme et rassurant pour les familles.</p>
                 <p>La première séance comprend un interrogatoire avec les parents (déroulement de la grossesse et de l&apos;accouchement, comportement du bébé), un examen très délicat puis un traitement ciblé. La durée est en général de 30 à 40 minutes. Une consultation nourrisson est au tarif de 50€ ; une facture est délivrée pour le remboursement par votre mutuelle. Aucune ordonnance n&apos;est requise pour prendre rendez-vous. Si vous habitez Valence ou les environs, n&apos;hésitez pas à nous contacter pour planifier une séance.</p>
               </div>
             </div>

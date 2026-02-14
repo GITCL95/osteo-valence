@@ -10,13 +10,24 @@ const BASE = "https://www.osteo-valence.fr";
 const canonical = `${BASE}/osteopathe-senior`;
 
 export const metadata: Metadata = {
-  title: "Ostéopathe Senior à Valence (26000) | Mobilité, Arthrose, Prévention des Chutes",
-  description: "Ostéopathe senior à Valence 26000. Mobilité, arthrose, équilibre, prévention des chutes. Techniques douces. Prenez RDV.",
+  title: "Ostéopathe senior Valence | Cabinet D.O.",
+  description: "Ostéopathe senior à Valence (26000). Mobilité, arthrose, équilibre, prévention des chutes. Techniques douces. Consultations à domicile. Prenez RDV.",
   alternates: { canonical },
-  openGraph: { title: "Ostéopathe Senior à Valence (26000) | Cabinet D.O.", description: "Ostéopathe senior à Valence. Confort, mobilité, prévention. Prenez RDV.", url: canonical, siteName: "Ostéopathe Valence", locale: "fr_FR", type: "website" },
+  openGraph: {
+    title: "Ostéopathe senior Valence | Cabinet D.O.",
+    description: "Ostéopathe senior à Valence. Confort, mobilité, prévention. Prenez RDV.",
+    url: canonical,
+    siteName: "Ostéopathe Valence",
+    locale: "fr_FR",
+    type: "website",
+    images: [{ url: `${BASE}/og-default.jpg`, width: 1200, height: 630, alt: "Ostéopathe senior à Valence" }],
+  },
+  twitter: { card: "summary_large_image", images: [`${BASE}/og-default.jpg`] },
 };
 
 const medicalSchema = { "@context": "https://schema.org", "@type": "MedicalBusiness", name: "Ostéopathe Valence", description: "Cabinet d'ostéopathie D.O. à Valence (26000). Ostéopathe senior : mobilité, arthrose, prévention des chutes.", url: canonical, address: { "@type": "PostalAddress", streetAddress: "45 avenue Victor Hugo", addressLocality: "Valence", postalCode: "26000", addressRegion: "Auvergne-Rhône-Alpes", addressCountry: "FR" }, geo: { "@type": "GeoCoordinates", latitude: 44.9334, longitude: 4.8924 }, medicalSpecialty: "GeriatricMedicine", priceRange: "55€" };
+
+const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Ostéopathie seniors", description: "Amélioration de la mobilité, soulagement de l'arthrose, travail sur l'équilibre et prévention des chutes à Valence.", provider: { "@type": "MedicalBusiness", name: "Ostéopathe Valence", url: BASE }, areaServed: { "@type": "City", name: "Valence" } };
 
 const FAQ_ITEMS = [
   { q: "Les manipulations sont-elles adaptées aux personnes âgées ?", a: "Oui. L'ostéopathe adapte toujours ses techniques à l'âge et à l'état de santé. Chez les seniors, on privilégie des techniques douces (musculaires, fasciales, mobilisations) et on évite les manipulations à fort impact lorsqu'il existe de l'ostéoporose ou des antécédents. Votre confort et votre sécurité sont prioritaires." },
@@ -55,6 +66,7 @@ export default function OsteopatheSeniorPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <FloatingCTA />
       <main className="min-h-screen bg-offwhite text-foreground pt-20">
@@ -75,7 +87,7 @@ export default function OsteopatheSeniorPage() {
               <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Ostéopathie pour les seniors à Valence : confort et mobilité</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto" aria-hidden />
               <div className="mt-10 space-y-6 text-gray-600 leading-relaxed">
-                <p>Avec l&apos;âge, les articulations peuvent se raidir, l&apos;arthrose apparaître et les douleurs du dos ou des membres devenir plus fréquentes. L&apos;ostéopathe senior à Valence (26000) accompagne les personnes âgées avec des techniques adaptées : pas de manipulations brutales, mais des mobilisations douces, des techniques musculaires et fasciales et un travail sur la posture et l&apos;équilibre. L&apos;objectif est de maintenir ou retrouver une bonne mobilité, de soulager les douleurs et de contribuer à la prévention des chutes. Le cabinet est accessible et nous proposons également des consultations à domicile pour les personnes qui ne peuvent pas se déplacer.</p>
+                <p>Avec l&apos;âge, les articulations peuvent se raidir, l&apos;arthrose apparaître et les douleurs du dos ou des membres devenir plus fréquentes. L&apos;ostéopathe senior à Valence (26000) accompagne les personnes âgées avec des techniques adaptées : pas de manipulations brutales, mais des mobilisations douces, des techniques musculaires et fasciales et un travail sur la posture et l&apos;équilibre. Pour les douleurs dorsales, l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe du dos</Link> et l&apos;<Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe sportif</Link> partagent la même approche globale. L&apos;objectif est de maintenir ou retrouver une bonne mobilité, de soulager les douleurs et de contribuer à la prévention des chutes. Le cabinet est accessible et nous proposons également des consultations à domicile pour les personnes qui ne peuvent pas se déplacer.</p>
                 <p>Chaque séance au cabinet avenue Victor Hugo à Valence commence par un interrogatoire (antécédents, traitements, prothèses éventuelles) pour adapter au mieux le traitement. La consultation adulte est au tarif de 55€ ; la consultation à domicile à 75€. Une facture est remise pour le remboursement par votre mutuelle. Prenez rendez-vous en ligne ou par téléphone pour une séance d&apos;ostéopathie pour senior à Valence.</p>
               </div>
             </div>

@@ -46,7 +46,12 @@ export default function ContactForm() {
 
   if (formSent) {
     return (
-      <div className="rounded-2xl bg-sage/10 border border-sage/30 p-8 text-center text-gray-700">
+      <div
+        className="rounded-2xl bg-sage/10 border border-sage/30 p-8 text-center text-gray-700"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
         <p className="font-medium">Votre demande a bien été envoyée.</p>
         <p className="mt-2 text-sm">
           Nous vous recontacterons sous 24h pour confirmer votre rendez-vous.

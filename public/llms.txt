@@ -1,6 +1,17 @@
 # Ostéopathe Valence
-> Cabinet d'ostéopathie D.O. à Valence (26000). Consultations pour adultes, nourrissons, femmes enceintes, sportifs et seniors.
+> Cabinet d'ostéopathie D.O. à Valence (26000). Consultations adultes, nourrissons, femmes enceintes, sportifs et seniors.
 
-## Pages principales
-- https://www.osteo-valence.fr : Accueil — services, tarifs, FAQ, prise de rendez-vous
-- https://www.osteo-valence.fr/mentions-legales : Mentions légales
+## Services
+- https://www.osteo-valence.fr/osteopathe-dos : Ostéopathie adultes – douleurs dorsales, cervicalgies, lombalgies, sciatiques
+- https://www.osteo-valence.fr/osteopathe-bebe : Ostéopathie nourrissons – coliques, torticolis, plagiocéphalie
+- https://www.osteo-valence.fr/osteopathe-femme-enceinte : Ostéopathie grossesse – douleurs lombaires, préparation accouchement
+- https://www.osteo-valence.fr/osteopathe-sportif : Ostéopathie sportifs – entorses, tendinites, récupération
+- https://www.osteo-valence.fr/osteopathe-senior : Ostéopathie seniors – arthrose, mobilité, équilibre
+
+## Informations pratiques
+- https://www.osteo-valence.fr : Page d'accueil – tarifs, horaires, contact, FAQ
+- https://www.osteo-valence.fr/blog : Articles et conseils ostéopathie
+
+## Contact
+- Adresse : 45 avenue Victor Hugo, 26000 Valence
+- Horaires : Lundi-Vendredi 8h-20h, Samedi 9h-13h

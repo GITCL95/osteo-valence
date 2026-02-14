@@ -10,18 +10,20 @@ const BASE = "https://www.osteo-valence.fr";
 const canonical = `${BASE}/osteopathe-sportif`;
 
 export const metadata: Metadata = {
-  title: "Ostéopathe du Sport à Valence (26000) | Blessures & Performance",
+  title: "Ostéopathe sportif Valence | Cabinet D.O.",
   description:
-    "Ostéopathe du sport à Valence 26000. Traitement entorses, tendinites, pubalgies. Préparation et récupération. Prenez RDV en ligne.",
+    "Ostéopathe du sport à Valence (26000). Entorses, tendinites, pubalgies. Préparation et récupération. Techniques adaptées. Prenez RDV au cabinet.",
   alternates: { canonical },
   openGraph: {
-    title: "Ostéopathe du Sport à Valence (26000) | Cabinet D.O.",
+    title: "Ostéopathe sportif Valence | Cabinet D.O.",
     description: "Ostéopathe du sport à Valence. Blessures, récupération, prévention. Prenez RDV.",
     url: canonical,
     siteName: "Ostéopathe Valence",
     locale: "fr_FR",
     type: "website",
+    images: [{ url: `${BASE}/og-default.jpg`, width: 1200, height: 630, alt: "Ostéopathe sportif à Valence" }],
   },
+  twitter: { card: "summary_large_image", images: [`${BASE}/og-default.jpg`] },
 };
 
 const medicalSchema = {
@@ -41,6 +43,15 @@ const medicalSchema = {
   geo: { "@type": "GeoCoordinates", latitude: 44.9334, longitude: 4.8924 },
   medicalSpecialty: "SportsMedicine",
   priceRange: "55€",
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Ostéopathie sportifs",
+  description: "Traitement des blessures sportives (entorses, tendinites, pubalgies), récupération et prévention à Valence.",
+  provider: { "@type": "MedicalBusiness", name: "Ostéopathe Valence", url: BASE },
+  areaServed: { "@type": "City", name: "Valence" },
 };
 
 const FAQ_ITEMS = [
@@ -92,6 +103,7 @@ export default function OsteopatheSportifPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <FloatingCTA />
       <main className="min-h-screen bg-offwhite text-foreground pt-20">
@@ -114,7 +126,7 @@ export default function OsteopatheSportifPage() {
               <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Pourquoi consulter un ostéopathe du sport à Valence ?</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto" aria-hidden />
               <div className="mt-10 space-y-6 text-gray-600 leading-relaxed">
-                <p>Que vous soyez coureur, footballeur, tennisman ou pratiquant de musculation, l&apos;ostéopathie du sport à Valence (26000) vous accompagne à chaque étape : prévention avant la saison, traitement des blessures (entorses, tendinites, pubalgies) et optimisation de la récupération après l&apos;effort. L&apos;ostéopathe D.O. travaille sur l&apos;ensemble du corps pour identifier les déséquilibres qui favorisent les douleurs ou les blessures à répétition. Les techniques utilisées sont adaptées au sportif et à son objectif, sans contre-indiquer la reprise du sport lorsque celle-ci est possible.</p>
+                <p>Que vous soyez coureur, footballeur, tennisman ou pratiquant de musculation, l&apos;ostéopathie du sport à Valence (26000) vous accompagne à chaque étape : prévention avant la saison, traitement des blessures (entorses, tendinites, pubalgies) et optimisation de la récupération après l&apos;effort. Les douleurs de dos fréquentes chez le sportif peuvent être prises en charge par l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe du dos</Link> ; pour un entretien à long terme, l&apos;<Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe senior</Link> propose aussi des techniques douces adaptées. L&apos;ostéopathe D.O. travaille sur l&apos;ensemble du corps pour identifier les déséquilibres qui favorisent les douleurs ou les blessures à répétition. Les techniques utilisées sont adaptées au sportif et à son objectif, sans contre-indiquer la reprise du sport lorsque celle-ci est possible.</p>
                 <p>Le cabinet situé avenue Victor Hugo à Valence reçoit de nombreux sportifs de la Drôme et des environs. Chaque consultation comprend un interrogatoire (type de sport, fréquence, antécédents de blessures), un examen clinique puis un traitement personnalisé. Nous pouvons également vous conseiller sur les étirements, l&apos;hydratation et la progressivité de la reprise. Une consultation adulte est au tarif de 55€ ; une facture est remise pour le remboursement par votre mutuelle. Prenez rendez-vous en ligne pour une séance d&apos;ostéopathie du sport à Valence.</p>
               </div>
             </div>

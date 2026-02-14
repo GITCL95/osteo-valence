@@ -98,6 +98,34 @@ const IconSearch = () => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
   </svg>
 );
+const IconLocation = () => (
+  <svg className="w-8 h-8 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  </svg>
+);
+const IconTime = () => (
+  <svg className="w-8 h-8 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+);
+const IconParking = () => (
+  <svg className="w-8 h-8 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+  </svg>
+);
+const IconWheelchair = () => (
+  <svg className="w-8 h-8 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+    <circle cx="12" cy="4" r="2" strokeWidth={1.5} />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18 18l-4-4m0 0l-2-2" />
+  </svg>
+);
+const IconBus = () => (
+  <svg className="w-8 h-8 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7v8m8-8v8m-8-4h8M4 7h16M4 17h16" />
+  </svg>
+);
 const IconLightbulb = () => (
   <svg className="w-8 h-8 text-sage shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
@@ -181,14 +209,14 @@ const TEMOIGNAGES = [
 ];
 
 export const FAQ_ITEMS = [
-  { q: "L'ostéopathie est-elle remboursée ?", a: "L'ostéopathie n'est pas remboursée par l'Assurance Maladie. En revanche, plus de 85 % des mutuelles proposent une prise en charge des séances (forfait annuel variable). Une facture vous est délivrée à chaque consultation pour effectuer votre demande de remboursement auprès de votre mutuelle." },
-  { q: "Combien de séances sont nécessaires ?", a: "Cela dépend du motif de consultation et de votre historique. Souvent, 1 à 3 séances suffisent pour un motif aigu. Pour un suivi plus long (chronique, prévention), nous en discutons ensemble lors du premier rendez-vous." },
-  { q: "Faut-il une ordonnance pour consulter un ostéopathe ?", a: "Non. Vous pouvez consulter un ostéopathe en direct, sans ordonnance médicale. En cas de pathologie connue ou de traitement en cours, il est toutefois conseillé d'en informer votre ostéopathe et éventuellement votre médecin." },
-  { q: "L'ostéopathie est-elle douloureuse ?", a: "Les techniques utilisées sont adaptées à chaque patient et généralement douces. Certaines manipulations peuvent provoquer un inconfort passager. Votre ressenti est toujours pris en compte et les techniques sont ajustées si besoin." },
-  { q: "À partir de quel âge peut-on consulter un ostéopathe ?", a: "Dès la naissance. L'ostéopathie pour nourrissons est courante (accouchement, coliques, torticolis, plagiocéphalie). Les techniques sont adaptées à l'âge, du bébé au senior." },
-  { q: "Comment se déroule une première séance ?", a: "La première séance comprend un interrogatoire (motif, antécédents, mode de vie), un examen clinique puis un traitement adapté. Prévoyez environ 45 minutes pour un adulte. Pensez à apporter vos examens médicaux pertinents si vous en avez." },
-  { q: "Quand consulter un ostéopathe ?", a: "En cas de douleurs vertébrales ou articulaires, après un choc ou une chute, pour un suivi de grossesse, pour un nourrisson (coliques, torticolis, sommeil), en prévention (sport, stress, travail sédentaire) ou après un accouchement. En cas de doute, n'hésitez pas à nous contacter." },
-  { q: "Quelle est la différence entre un ostéopathe et un kinésithérapeute ?", a: "L'ostéopathe travaille sur l'ensemble du corps avec une approche globale (articulations, muscles, viscères, crâne) et vise à rétablir la mobilité et l'équilibre. Le kinésithérapeute se concentre davantage sur la rééducation motrice et fonctionnelle, souvent sur prescription médicale. Les deux approches peuvent être complémentaires." },
+  { q: "L'ostéopathie est-elle remboursée ?", a: "L'ostéopathie n'est pas remboursée par l'Assurance Maladie. Plus de 85 % des mutuelles prennent en charge les séances (forfait variable). Une facture vous est délivrée à chaque consultation pour votre demande de remboursement." },
+  { q: "Combien de séances sont nécessaires ?", a: "Cela dépend du motif et de votre historique. Souvent 1 à 3 séances suffisent pour un motif aigu. Pour un suivi chronique ou en prévention, nous en discutons au premier rendez-vous." },
+  { q: "Faut-il une ordonnance pour consulter un ostéopathe ?", a: "Non. Vous pouvez consulter en direct, sans ordonnance. En cas de pathologie connue ou de traitement en cours, il est conseillé d'en informer votre ostéopathe et votre médecin." },
+  { q: "L'ostéopathie est-elle douloureuse ?", a: "Les techniques sont adaptées à chaque patient et généralement douces. Certaines manipulations peuvent provoquer un inconfort passager. Votre ressenti est pris en compte et les techniques sont ajustées si besoin." },
+  { q: "À partir de quel âge peut-on consulter un ostéopathe ?", a: "Dès la naissance. L'ostéopathie pour nourrissons est courante (coliques, torticolis, plagiocéphalie). Les techniques sont adaptées à l'âge, du bébé au senior." },
+  { q: "Comment se déroule une première séance ?", a: "La première séance comprend un interrogatoire (motif, antécédents), un examen clinique puis un traitement adapté. Prévoyez environ 45 minutes pour un adulte. Apportez vos examens médicaux pertinents si vous en avez." },
+  { q: "Quand consulter un ostéopathe ?", a: "Douleurs vertébrales ou articulaires, après un choc ou une chute, suivi de grossesse, nourrisson (coliques, torticolis, sommeil), prévention (sport, stress, travail sédentaire) ou après un accouchement. En cas de doute, contactez-nous." },
+  { q: "Quelle est la différence entre un ostéopathe et un kinésithérapeute ?", a: "L'ostéopathe travaille sur l'ensemble du corps (articulations, muscles, viscères, crâne) pour rétablir la mobilité. Le kiné se concentre sur la rééducation motrice, souvent sur prescription. Les deux approches sont complémentaires." },
 ];
 
 function SectionReveal({
@@ -228,7 +256,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0 hidden md:block">
             <Image
               src="/osteopathe-valence-cabinet.webp"
-              alt="Ostéopathe à Valence réalisant une manipulation cervicale douce dans un cabinet lumineux et moderne"
+              alt="Cabinet d'ostéopathie à Valence – salle de consultation lumineuse"
               fill
               className="object-cover hero-parallax"
               priority
@@ -240,7 +268,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0 md:hidden">
             <Image
               src="/osteopathe-valence-cabinet-mobile.webp"
-              alt="Ostéopathe à Valence réalisant une manipulation cervicale douce dans un cabinet lumineux et moderne"
+              alt="Ostéopathe à Valence réalisant une manipulation cervicale douce"
               fill
               className="object-cover"
               priority
@@ -304,7 +332,7 @@ export default function Home() {
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-6 rounded-full" aria-hidden />
             <p className="text-center text-gray-600 max-w-2xl mx-auto mb-14">
-              Des soins adaptés à chaque âge et chaque besoin.
+              Des soins adaptés à chaque âge et chaque besoin : de l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathie pour adultes et douleurs du dos</Link> à la prise en charge du <Link href="/osteopathe-bebe" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">nourrisson</Link> et de la <Link href="/osteopathe-femme-enceinte" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">femme enceinte</Link>, en passant par le suivi du <Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">sportif</Link> et du <Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">senior</Link>.
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-animate="stagger">
               {SERVICES.map(({ title, desc, Icon, href }) => {
@@ -365,7 +393,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">Douleurs du dos et du cou</h3>
                   <p>
-                    Lombalgies, cervicalgies, torticolis, hernies discales ou douleurs entre les omoplates sont des motifs fréquents de consultation. Lorsque la douleur persiste plus de trois jours, revient régulièrement ou limite vos mouvements au quotidien, consulter un ostéopathe permet d&apos;en identifier l&apos;origine et de soulager les tensions par des techniques adaptées. Une prise en charge précoce évite souvent l&apos;installation de douleurs chroniques.
+                    Lombalgies, cervicalgies, torticolis, hernies discales ou douleurs entre les omoplates sont des motifs fréquents de consultation. Lorsque la douleur persiste plus de trois jours, revient régulièrement ou limite vos mouvements au quotidien, <Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">consulter un ostéopathe pour le dos</Link> permet d&apos;en identifier l&apos;origine et de soulager les tensions par des techniques adaptées. Une prise en charge précoce évite souvent l&apos;installation de douleurs chroniques.
                   </p>
                 </div>
               </div>
@@ -392,7 +420,7 @@ export default function Home() {
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">En prévention</h3>
                   <p>
-                    Une consultation préventive deux à trois fois par an est idéale pour maintenir un bon équilibre corporel. Elle est particulièrement recommandée aux sportifs, aux travailleurs sédentaires, aux seniors ou à toute personne souhaitant prévenir l&apos;apparition de douleurs. L&apos;ostéopathe repère et corrige les petites dysfonctions avant qu&apos;elles ne deviennent gênantes.
+                    Une consultation préventive deux à trois fois par an est idéale pour maintenir un bon équilibre corporel. Elle est particulièrement recommandée aux <Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">sportifs</Link>, aux travailleurs sédentaires, aux <Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">seniors</Link> ou à toute personne souhaitant prévenir l&apos;apparition de douleurs. L&apos;ostéopathe repère et corrige les petites dysfonctions avant qu&apos;elles ne deviennent gênantes.
                   </p>
                 </div>
               </div>
@@ -545,7 +573,9 @@ export default function Home() {
                 <a
                   key={quartier}
                   href="#contact"
-                  className="badge-quartier inline-flex items-center gap-2 rounded-full border-2 border-sage bg-white px-4 py-2.5 text-sm font-medium text-gray-800 card-shadow transition-all duration-300 hover:bg-sage hover:text-white hover:border-sage"
+                  title={`Prendre rendez-vous – cabinet accessible depuis ${quartier}`}
+                  aria-label={`Prendre rendez-vous – cabinet accessible depuis ${quartier}`}
+                  className="badge-quartier inline-flex items-center gap-2 rounded-full border-2 border-sage bg-white px-5 py-3 min-h-[44px] min-w-[44px] text-sm font-medium text-gray-800 card-shadow transition-all duration-300 hover:bg-sage hover:text-white hover:border-sage focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
                 >
                   <IconPin />
                   {quartier}
@@ -660,35 +690,35 @@ export default function Home() {
               </div>
               <div className="flex flex-col gap-4">
                 <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <span className="text-2xl" aria-hidden>📍</span>
+                  <IconLocation />
                   <div>
                     <p className="font-semibold text-gray-800">Adresse</p>
                     <p className="text-gray-600 text-sm mt-0.5">45 avenue Victor Hugo, 26000 Valence</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <span className="text-2xl" aria-hidden>🕐</span>
+                  <IconTime />
                   <div>
                     <p className="font-semibold text-gray-800">Horaires</p>
                     <p className="text-gray-600 text-sm mt-0.5">Lundi-Vendredi 8h-20h, Samedi 9h-13h</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <span className="text-2xl" aria-hidden>🚗</span>
+                  <IconParking />
                   <div>
                     <p className="font-semibold text-gray-800">Parking</p>
                     <p className="text-gray-600 text-sm mt-0.5">Parking gratuit à proximité</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <span className="text-2xl" aria-hidden>♿</span>
+                  <IconWheelchair />
                   <div>
                     <p className="font-semibold text-gray-800">Accessibilité</p>
                     <p className="text-gray-600 text-sm mt-0.5">Cabinet accessible PMR</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <span className="text-2xl" aria-hidden>🚌</span>
+                  <IconBus />
                   <div>
                     <p className="font-semibold text-gray-800">Transports</p>
                     <p className="text-gray-600 text-sm mt-0.5">Arrêt de bus &quot;Victor Hugo&quot; à 50 m</p>

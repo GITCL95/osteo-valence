@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     description: "Ostéopathe D.O. à Valence. Consultations adultes, bébés, sportifs. Prenez RDV en ligne.",
     images: [`${BASE}/og-default.jpg`],
   },
+  verification: {
+    google: "NrP56tL_z6NcoCJenY84uW4M_sWA0ve2KFnpx3f0bgc",
+  },
 };
 
 const medicalBusinessSchema = {

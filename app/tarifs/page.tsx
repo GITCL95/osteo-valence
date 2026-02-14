@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FaqAccordion from "@/components/FaqAccordion";
+import SectionWave from "@/components/SectionWave";
+import ScrollAnimations from "@/components/ScrollAnimations";
+import SectionReveal from "@/components/SectionReveal";
+import FloatingCTA from "@/components/FloatingCTA";
+import AnimatedCounters from "@/components/AnimatedCounters";
 
 const BASE = "https://www.osteo-valence.fr";
 const canonical = `${BASE}/tarifs`;
@@ -63,57 +68,59 @@ const TARIFS = [
   { title: "Consultation à domicile", price: "75€", duration: "déplacement inclus (Valence et alentours)" },
 ];
 
-const SERVICE_LINKS = [
+const ALL_LINKS = [
+  { href: "/", label: "Accueil" },
   { href: "/osteopathe-sportif", label: "Ostéopathe sportif" },
   { href: "/osteopathe-bebe", label: "Ostéopathe bébé" },
-  { href: "/osteopathe-femme-enceinte", label: "Ostéopathe femme enceinte" },
-  { href: "/osteopathe-dos", label: "Ostéopathe mal de dos" },
+  { href: "/osteopathe-femme-enceinte", label: "Femme enceinte" },
+  { href: "/osteopathe-dos", label: "Mal de dos" },
   { href: "/osteopathe-senior", label: "Ostéopathe senior" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export default function TarifsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <FloatingCTA />
       <main className="min-h-screen bg-offwhite text-foreground pt-20">
-        <section className="relative bg-gradient-to-b from-sage/25 via-cream/40 to-offwhite py-20 px-4 md:px-8 overflow-hidden">
-          <div className="relative z-10 mx-auto max-w-4xl text-center">
-            <h1 className="text-3xl font-light text-gray-800 md:text-4xl lg:text-5xl">
-              Tarifs Ostéopathe Valence (26000)
-            </h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Consultations au cabinet et à domicile. Facture délivrée pour le remboursement par votre mutuelle.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-16 md:py-20 px-4 md:px-8 bg-offwhite">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">
-              Nos tarifs de consultation
-            </h2>
-            <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-10 rounded-full" aria-hidden />
-            <div className="grid gap-6 md:grid-cols-3">
-              {TARIFS.map(({ title, price, duration }) => (
-                <div
-                  key={title}
-                  className="card-shadow card-hover rounded-2xl border border-white/30 bg-white/70 backdrop-blur-xl p-8 text-center"
-                >
-                  <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-                  <p className="mt-4 text-5xl font-light text-gold">{price}</p>
-                  <p className="mt-2 text-sm text-gray-600">{duration}</p>
-                </div>
-              ))}
+        <ScrollAnimations>
+          <SectionReveal className="relative bg-gradient-to-b from-sage/25 via-cream/40 to-offwhite py-20 px-4 md:px-8 overflow-hidden" animate="fade-up">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-sage/10 rounded-full blur-3xl pointer-events-none z-0" aria-hidden />
+            <div className="absolute bottom-0 left-0 w-72 h-72 bg-gold/10 rounded-full blur-3xl pointer-events-none z-0" aria-hidden />
+            <div className="relative z-10 mx-auto max-w-4xl text-center">
+              <h1 className="text-3xl font-light text-gray-800 md:text-4xl lg:text-5xl">Tarifs Ostéopathe Valence (26000)</h1>
+              <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Consultations au cabinet et à domicile. Facture délivrée pour le remboursement par votre mutuelle.</p>
             </div>
-          </div>
-        </section>
+            <SectionWave fillClass="fill-offwhite" />
+          </SectionReveal>
 
-        <section className="py-16 md:py-20 px-4 md:px-8 bg-cream/50">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">
-              Remboursement par les mutuelles
-            </h2>
-            <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-6 rounded-full" aria-hidden />
+          <SectionReveal className="py-16 md:py-20 px-4 md:px-8" animate="fade-up">
+            <AnimatedCounters />
+          </SectionReveal>
+
+          <SectionReveal className="relative py-16 md:py-20 px-4 md:px-8 bg-offwhite overflow-hidden" animate="fade-up">
+            <div className="absolute top-0 right-0 w-80 h-80 bg-sage/10 rounded-full blur-3xl pointer-events-none z-0" aria-hidden />
+            <div className="relative z-10 mx-auto max-w-4xl">
+              <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Nos tarifs de consultation</h2>
+              <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-10" aria-hidden />
+              <div className="grid gap-6 md:grid-cols-3">
+                {TARIFS.map(({ title, price, duration }) => (
+                  <div key={title} className="card-shadow card-hover rounded-2xl border border-white/50 bg-white/70 backdrop-blur-sm p-8 text-center hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+                    <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+                    <p className="mt-4 text-5xl font-light text-gold">{price}</p>
+                    <p className="mt-2 text-sm text-gray-600">{duration}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </SectionReveal>
+
+        <SectionReveal className="relative py-16 md:py-20 px-4 md:px-8 bg-cream/50 overflow-hidden" animate="fade-up">
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-gold/10 rounded-full blur-3xl pointer-events-none z-0" aria-hidden />
+          <div className="relative z-10 mx-auto max-w-4xl">
+            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Remboursement par les mutuelles</h2>
+            <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-6" aria-hidden />
             <p className="text-gray-600 leading-relaxed text-center mb-8">
               L&apos;ostéopathie n&apos;est pas remboursée par la Sécurité Sociale. Plus de 85 % des mutuelles prennent en charge les séances (1 à 4 par an selon votre contrat). Une facture vous est remise à chaque consultation ; envoyez-la à votre mutuelle pour obtenir votre remboursement. Vérifiez votre contrat pour connaître votre forfait.
             </p>
@@ -135,26 +142,24 @@ export default function TarifsPage() {
               </table>
             </div>
           </div>
-        </section>
+          <SectionWave fillClass="fill-offwhite" />
+        </SectionReveal>
 
-        <section className="py-16 md:py-20 px-4 md:px-8 bg-offwhite">
+        <SectionReveal className="py-16 md:py-20 px-4 md:px-8 bg-offwhite" animate="fade-up">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">
-              Moyens de paiement
-            </h2>
-            <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-6 rounded-full" aria-hidden />
+            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Moyens de paiement</h2>
+            <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-6" aria-hidden />
             <p className="text-gray-600 text-center">
               Carte bancaire, espèces et chèque acceptés. Le règlement s&apos;effectue à la fin de chaque séance. Une facture vous est délivrée systématiquement pour votre mutuelle.
             </p>
           </div>
-        </section>
+        </SectionReveal>
 
-        <section className="py-16 md:py-20 px-4 md:px-8 bg-cream/50">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">
-              Infos pratiques
-            </h2>
-            <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-8 rounded-full" aria-hidden />
+        <SectionReveal className="relative py-16 md:py-20 px-4 md:px-8 bg-cream/50 overflow-hidden" animate="fade-up">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-sage/10 rounded-full blur-3xl pointer-events-none z-0" aria-hidden />
+          <div className="relative z-10 mx-auto max-w-4xl">
+            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Infos pratiques</h2>
+            <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-8" aria-hidden />
             <div className="grid gap-6 md:grid-cols-2 text-gray-600">
               <div className="card-shadow rounded-2xl bg-white p-6 border border-bluegray/20">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Adresse</h3>
@@ -171,51 +176,37 @@ export default function TarifsPage() {
               <strong>Urgences :</strong> en cas de blocage aigu, nous nous efforçons de vous proposer un créneau sous 24 à 48h. Contactez le cabinet pour signaler une urgence.
             </p>
           </div>
-        </section>
+          <SectionWave fillClass="fill-offwhite" />
+        </SectionReveal>
 
-        <section className="py-16 md:py-20 px-4 md:px-8 bg-offwhite">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">
-              Questions fréquentes – Tarifs et remboursement
-            </h2>
-            <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-10 rounded-full" aria-hidden />
+        <SectionReveal className="relative py-16 md:py-20 px-4 md:px-8 bg-sage/10 overflow-hidden" animate="fade-up">
+          <div className="absolute top-1/2 right-0 w-72 h-72 bg-sage/10 rounded-full blur-3xl pointer-events-none z-0" aria-hidden />
+          <div className="relative z-10 mx-auto max-w-4xl">
+            <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Questions fréquentes – Tarifs et remboursement</h2>
+            <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-10" aria-hidden />
             <FaqAccordion items={FAQ_ITEMS} />
           </div>
-        </section>
+          <SectionWave fillClass="fill-cream" />
+        </SectionReveal>
 
-        <section className="py-16 md:py-20 px-4 md:px-8 bg-cream/50">
+        <SectionReveal id="contact" className="py-16 md:py-20 px-4 md:px-8 bg-cream/50" animate="scale-in">
           <div className="mx-auto max-w-2xl text-center">
-            <Link
-              href="/#contact"
-              className="btn-cta inline-block rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90"
-            >
-              Prendre rendez-vous
-            </Link>
+            <Link href="/#contact" className="btn-cta inline-block rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90">Prendre rendez-vous</Link>
           </div>
-        </section>
+        </SectionReveal>
 
-        <section className="py-16 md:py-20 px-4 md:px-8 bg-offwhite border-t border-bluegray/20">
+        <SectionReveal className="py-16 md:py-20 px-4 md:px-8 bg-offwhite border-t border-bluegray/20" animate="fade-up">
           <div className="mx-auto max-w-4xl">
-            <h2 className="text-xl font-light text-gray-800 md:text-2xl text-center mb-4">
-              Nos soins en ostéopathie à Valence
-            </h2>
-            <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-8 rounded-full" aria-hidden />
+            <h2 className="text-xl font-light text-gray-800 md:text-2xl text-center mb-4">Nos soins et pages</h2>
+            <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-8" aria-hidden />
             <div className="flex flex-wrap justify-center gap-4">
-              {SERVICE_LINKS.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="rounded-full border border-sage/50 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition hover:bg-cream/50 hover:text-sage"
-                >
-                  {label}
-                </Link>
+              {ALL_LINKS.map(({ href, label }) => (
+                <Link key={href} href={href} className="link-lire-la-suite rounded-full border border-sage/50 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition hover:bg-cream/50 hover:text-sage hover:scale-[1.02] hover:-translate-y-1">{label}</Link>
               ))}
-              <Link href="/blog" className="rounded-full border border-sage/50 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition hover:bg-cream/50 hover:text-sage">
-                Blog
-              </Link>
             </div>
           </div>
-        </section>
+        </SectionReveal>
+        </ScrollAnimations>
       </main>
     </>
   );

@@ -3,12 +3,39 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+/* Icônes 20x20 pour le mega menu (couleur sage) */
+const IconSport = () => (
+  <svg className="h-5 w-5 shrink-0 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>
+);
+const IconBebe = () => (
+  <svg className="h-5 w-5 shrink-0 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </svg>
+);
+const IconFemmeEnceinte = () => (
+  <svg className="h-5 w-5 shrink-0 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+);
+const IconDos = () => (
+  <svg className="h-5 w-5 shrink-0 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+  </svg>
+);
+const IconSenior = () => (
+  <svg className="h-5 w-5 shrink-0 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+  </svg>
+);
+
 const SERVICE_LINKS = [
-  { href: "/osteopathe-sportif", label: "Ostéopathe sportif" },
-  { href: "/osteopathe-bebe", label: "Ostéopathe bébé" },
-  { href: "/osteopathe-femme-enceinte", label: "Femme enceinte" },
-  { href: "/osteopathe-dos", label: "Mal de dos" },
-  { href: "/osteopathe-senior", label: "Ostéopathe senior" },
+  { href: "/osteopathe-sportif", label: "Ostéopathe sportif", description: "Blessures, récupération, performance", Icon: IconSport },
+  { href: "/osteopathe-bebe", label: "Ostéopathe bébé", description: "Coliques, torticolis, plagiocéphalie", Icon: IconBebe },
+  { href: "/osteopathe-femme-enceinte", label: "Femme enceinte", description: "Grossesse, préparation, post-partum", Icon: IconFemmeEnceinte },
+  { href: "/osteopathe-dos", label: "Mal de dos", description: "Lombalgie, sciatique, hernie discale", Icon: IconDos },
+  { href: "/osteopathe-senior", label: "Ostéopathe senior", description: "Mobilité, arthrose, prévention chutes", Icon: IconSenior },
 ];
 
 export default function NavBar() {
@@ -76,30 +103,36 @@ export default function NavBar() {
                 </svg>
               </button>
               {servicesOpen && (
-                <div className="absolute left-0 top-full pt-1">
-                  <div className="card-shadow rounded-xl border border-bluegray/20 bg-white py-2 min-w-[220px]">
-                    {SERVICE_LINKS.map(({ href, label }) => (
+                <div className="absolute left-0 top-full pt-2">
+                  <div
+                    className="animate-mega-menu-in w-[500px] rounded-2xl border border-white/50 bg-white/90 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.15)] backdrop-blur-xl"
+                    role="menu"
+                  >
+                    <div className="grid grid-cols-2 gap-1">
+                      {SERVICE_LINKS.map(({ href, label, description, Icon }) => (
+                        <Link
+                          key={href}
+                          href={href}
+                          role="menuitem"
+                          className="flex items-start gap-3 rounded-xl p-3 transition-all hover:bg-sage/5"
+                        >
+                          <Icon />
+                          <div className="min-w-0">
+                            <span className="block font-semibold text-gray-800">{label}</span>
+                            <span className="block text-xs text-gray-500">{description}</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="mt-3 border-t border-gray-100 pt-3">
                       <Link
-                        key={href}
-                        href={href}
-                        className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-cream/50 hover:text-sage transition"
+                        href="/tarifs"
+                        className="inline-flex items-center gap-1 text-sm font-medium text-sage transition-colors hover:text-sage/80"
                       >
-                        {label}
+                        Voir tous les tarifs
+                        <span aria-hidden>→</span>
                       </Link>
-                    ))}
-                    <div className="my-1 border-t border-bluegray/20" />
-                    <Link
-                      href="/tarifs"
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-cream/50 hover:text-sage transition"
-                    >
-                      Tarifs
-                    </Link>
-                    <Link
-                      href="/blog"
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-cream/50 hover:text-sage transition"
-                    >
-                      Blog
-                    </Link>
+                    </div>
                   </div>
                 </div>
               )}
@@ -167,20 +200,23 @@ export default function NavBar() {
                 </button>
                 {mobileServicesOpen && (
                   <div className="pl-3 pb-2 flex flex-col gap-1">
-                    {SERVICE_LINKS.map(({ href, label }) => (
+                    {SERVICE_LINKS.map(({ href, label, Icon }) => (
                       <Link
                         key={href}
                         href={href}
                         onClick={closeMobileMenu}
-                        className="py-1.5 text-sm text-gray-600 hover:text-sage"
+                        className="flex items-center gap-3 py-2.5 text-sm text-gray-600 hover:text-sage"
                       >
-                        {label}
+                        <Icon />
+                        <span>{label}</span>
                       </Link>
                     ))}
-                    <Link href="/tarifs" onClick={closeMobileMenu} className="py-1.5 text-sm text-gray-600 hover:text-sage">
+                    <Link href="/tarifs" onClick={closeMobileMenu} className="flex items-center gap-3 py-2.5 text-sm text-gray-600 hover:text-sage">
+                      <svg className="h-5 w-5 shrink-0 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                       Tarifs
                     </Link>
-                    <Link href="/blog" onClick={closeMobileMenu} className="py-1.5 text-sm text-gray-600 hover:text-sage">
+                    <Link href="/blog" onClick={closeMobileMenu} className="flex items-center gap-3 py-2.5 text-sm text-gray-600 hover:text-sage">
+                      <svg className="h-5 w-5 shrink-0 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
                       Blog
                     </Link>
                   </div>

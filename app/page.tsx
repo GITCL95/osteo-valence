@@ -114,26 +114,31 @@ const SERVICES = [
     title: "Ostéopathie adultes",
     desc: "Traitement des douleurs dorsales, cervicalgies, lombalgies, sciatiques, névralgies et tensions musculaires. Soulagement des maux de dos chroniques ou aigus par des manipulations douces.",
     Icon: IconHand,
+    href: "/osteopathe-dos",
   },
   {
     title: "Ostéopathie nourrissons & bébés",
     desc: "Prise en charge des coliques du nourrisson, torticolis congénital, plagiocéphalie (tête plate) et troubles du sommeil. Techniques adaptées et très douces dès les premiers jours de vie.",
     Icon: IconBaby,
+    href: "/osteopathe-bebe",
   },
   {
     title: "Ostéopathie femmes enceintes",
     desc: "Accompagnement ostéopathique pendant la grossesse : soulagement des douleurs lombaires, préparation du bassin à l'accouchement, rééducation post-partum. Séances adaptées à chaque trimestre.",
     Icon: IconPregnant,
+    href: "/osteopathe-femme-enceinte",
   },
   {
     title: "Ostéopathie sportifs",
     desc: "Préparation physique, optimisation de la récupération musculaire, traitement des blessures (entorses, tendinites, pubalgies). Suivi régulier pour la prévention.",
     Icon: IconSport,
+    href: "/osteopathe-sportif",
   },
   {
     title: "Ostéopathie seniors",
     desc: "Amélioration de la mobilité articulaire, soulagement de l'arthrose, travail sur l'équilibre et prévention des chutes. Techniques très douces adaptées aux fragilités.",
     Icon: IconSenior,
+    href: "/osteopathe-senior",
   },
   {
     title: "Ostéopathie viscérale",
@@ -302,18 +307,27 @@ export default function Home() {
               Des soins adaptés à chaque âge et chaque besoin.
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-animate="stagger">
-              {SERVICES.map(({ title, desc, Icon }) => (
-                <div
-                  key={title}
-                  className="card-3d card-shadow rounded-2xl bg-white p-8 border border-bluegray/20"
-                >
-                  <div className="mb-4">
-                    <Icon />
+              {SERVICES.map(({ title, desc, Icon, href }) => {
+                const cardContent = (
+                  <>
+                    <div className="mb-4">
+                      <Icon />
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
+                    <p className="mt-2 text-gray-600 text-sm leading-relaxed">{desc}</p>
+                  </>
+                );
+                const cardClass = "card-3d card-shadow rounded-2xl bg-white p-8 border border-bluegray/20";
+                return href ? (
+                  <Link key={title} href={href} className={`block ${cardClass} transition hover:no-underline`}>
+                    {cardContent}
+                  </Link>
+                ) : (
+                  <div key={title} className={cardClass}>
+                    {cardContent}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
-                  <p className="mt-2 text-gray-600 text-sm leading-relaxed">{desc}</p>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
           <SectionWave fillClass="fill-offwhite" />

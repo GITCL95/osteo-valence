@@ -10,6 +10,12 @@ const LABELS: Record<string, string> = {
   "/mentions-legales": "Mentions légales",
   "/politique-confidentialite": "Politique de confidentialité",
   "/blog": "Blog",
+  "/osteopathe-sportif": "Ostéopathe sportif",
+  "/osteopathe-bebe": "Ostéopathe bébé",
+  "/osteopathe-femme-enceinte": "Ostéopathe femme enceinte",
+  "/osteopathe-dos": "Ostéopathe mal de dos",
+  "/osteopathe-senior": "Ostéopathe senior",
+  "/tarifs": "Tarifs",
 };
 
 function getBreadcrumbs(pathname: string) {

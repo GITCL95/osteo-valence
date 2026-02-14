@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CookieBanner from "@/components/CookieBanner";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -112,21 +113,6 @@ const medicalBusinessSchema = {
   },
 };
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    { "@type": "Question", name: "L'ostéopathie est-elle remboursée ?", acceptedAnswer: { "@type": "Answer", text: "L'ostéopathie n'est pas remboursée par l'Assurance Maladie. Plus de 85 % des mutuelles prennent en charge les séances (forfait variable). Une facture vous est délivrée à chaque consultation pour votre demande de remboursement." } },
-    { "@type": "Question", name: "Combien de séances sont nécessaires ?", acceptedAnswer: { "@type": "Answer", text: "Cela dépend du motif et de votre historique. Souvent 1 à 3 séances suffisent pour un motif aigu. Pour un suivi chronique ou en prévention, nous en discutons au premier rendez-vous." } },
-    { "@type": "Question", name: "Faut-il une ordonnance pour consulter un ostéopathe ?", acceptedAnswer: { "@type": "Answer", text: "Non. Vous pouvez consulter en direct, sans ordonnance. En cas de pathologie connue ou de traitement en cours, il est conseillé d'en informer votre ostéopathe et votre médecin." } },
-    { "@type": "Question", name: "L'ostéopathie est-elle douloureuse ?", acceptedAnswer: { "@type": "Answer", text: "Les techniques sont adaptées à chaque patient et généralement douces. Certaines manipulations peuvent provoquer un inconfort passager. Votre ressenti est pris en compte et les techniques sont ajustées si besoin." } },
-    { "@type": "Question", name: "À partir de quel âge peut-on consulter un ostéopathe ?", acceptedAnswer: { "@type": "Answer", text: "Dès la naissance. L'ostéopathie pour nourrissons est courante (coliques, torticolis, plagiocéphalie). Les techniques sont adaptées à l'âge, du bébé au senior." } },
-    { "@type": "Question", name: "Comment se déroule une première séance ?", acceptedAnswer: { "@type": "Answer", text: "La première séance comprend un interrogatoire (motif, antécédents), un examen clinique puis un traitement adapté. Prévoyez environ 45 minutes pour un adulte. Apportez vos examens médicaux pertinents si vous en avez." } },
-    { "@type": "Question", name: "Quand consulter un ostéopathe ?", acceptedAnswer: { "@type": "Answer", text: "Douleurs vertébrales ou articulaires, après un choc ou une chute, suivi de grossesse, nourrisson (coliques, torticolis, sommeil), prévention (sport, stress, travail sédentaire) ou après un accouchement. En cas de doute, contactez-nous." } },
-    { "@type": "Question", name: "Quelle est la différence entre un ostéopathe et un kinésithérapeute ?", acceptedAnswer: { "@type": "Answer", text: "L'ostéopathe travaille sur l'ensemble du corps (articulations, muscles, viscères, crâne) pour rétablir la mobilité. Le kiné se concentre sur la rééducation motrice, souvent sur prescription. Les deux approches sont complémentaires." } },
-  ],
-};
-
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -171,18 +157,13 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
           }}
         />
         <NavBar />
         <Breadcrumbs />
         {children}
+        <Footer />
         <CookieBanner />
         <script
           type="speculationrules"

@@ -7,15 +7,15 @@ import SectionReveal from "@/components/SectionReveal";
 import FloatingCTA from "@/components/FloatingCTA";
 
 const BASE = "https://www.osteo-valence.fr";
-const canonical = `${BASE}/osteopathe-femme-enceinte`;
+const canonical = `${BASE}/osteopathe-femme-enceinte/`;
 
 export const metadata: Metadata = {
-  title: "Ostéopathe femme enceinte Valence | Cabinet D.O.",
+  title: "Ostéopathe Femme Enceinte Valence (26000) – Grossesse & Post-Partum | Cabinet D.O.",
   description:
-    "Ostéopathe femme enceinte à Valence (26000). Douleurs grossesse, préparation accouchement, post-partum. Techniques douces. Prenez RDV au cabinet.",
+    "Ostéopathe femme enceinte à Valence (26000) : grossesse, accouchement, post-partum. Techniques douces adaptées. 55€. ☎ Prenez RDV.",
   alternates: { canonical },
   openGraph: {
-    title: "Ostéopathe femme enceinte Valence | Cabinet D.O.",
+    title: "Ostéopathe Femme Enceinte Valence (26000) – Grossesse & Post-Partum | Cabinet D.O.",
     description: "Ostéopathe grossesse à Valence. Confort, préparation accouchement. Techniques douces. Prenez RDV.",
     url: canonical,
     siteName: "Ostéopathe Valence",
@@ -26,24 +26,6 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: [`${BASE}/og-default.jpg`] },
 };
 
-const medicalSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Ostéopathe Valence",
-  description: "Cabinet d'ostéopathie D.O. à Valence (26000). Ostéopathe femme enceinte : grossesse, accouchement, post-partum.",
-  url: canonical,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "45 avenue Victor Hugo",
-    addressLocality: "Valence",
-    postalCode: "26000",
-    addressRegion: "Auvergne-Rhône-Alpes",
-    addressCountry: "FR",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 44.9334, longitude: 4.8924 },
-  medicalSpecialty: "ObstetricAndGynecologic",
-  priceRange: "55€",
-};
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -52,12 +34,15 @@ const serviceSchema = {
   description: "Accompagnement ostéopathique pendant la grossesse : douleurs lombaires, préparation du bassin à l'accouchement, post-partum à Valence.",
   provider: { "@type": "MedicalBusiness", name: "Ostéopathe Valence", url: BASE },
   areaServed: { "@type": "City", name: "Valence" },
+  offers: { "@type": "Offer", price: "55", priceCurrency: "EUR" },
+  serviceType: "Ostéopathie grossesse",
+  audience: { "@type": "PeopleAudience", audienceType: "Femmes enceintes" },
 };
 
 const FAQ_ITEMS = [
   {
     q: "L'ostéopathie est-elle sans danger pendant la grossesse ?",
-    a: "Oui. Les techniques utilisées sont adaptées à la grossesse : pas de manipulations à risque, pas de pression sur l'abdomen. L'ostéopathe travaille sur le bassin, le dos, le diaphragme et les tissus pour soulager les douleurs et améliorer le confort. En cas de grossesse à risque, un avis de votre médecin ou sage-femme est recommandé.",
+    a: "Oui. Les techniques utilisées sont adaptées à la grossesse : pas de manipulations à risque, pas de pression sur l'abdomen. L'ostéopathe à Valence travaille sur le bassin, le dos, le diaphragme et les tissus pour soulager les douleurs et améliorer le confort. En cas de grossesse à risque, un avis de votre médecin ou sage-femme est recommandé.",
   },
   {
     q: "À quel mois de grossesse peut-on commencer ?",
@@ -69,7 +54,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Combien de séances prévoir pendant la grossesse ?",
-    a: "Cela dépend de votre ressenti. Certaines femmes consultent une fois par trimestre, d'autres en cas de douleur (lombalgie, sciatique, douleurs ligamentaires). Un bilan en début de 3e trimestre et une séance en fin de grossesse pour préparer le bassin sont souvent appréciés.",
+    a: "Cela dépend de votre ressenti. Certaines femmes à Valence consultent une fois par trimestre, d'autres en cas de douleur (lombalgie, sciatique, douleurs ligamentaires). Un bilan en début de 3e trimestre et une séance en fin de grossesse pour préparer le bassin sont souvent appréciés.",
   },
   {
     q: "Peut-on consulter juste après l'accouchement ?",
@@ -108,14 +93,13 @@ const PATHOLOGIES = [
   { title: "Rééducation post-partum", desc: "Rééquilibrage après l'accouchement : bassin, dos, cicatrices.", Icon: IconPostPartum, badge: "Post-partum" },
 ];
 
-const TEMOIGNAGE = { name: "Thomas D.", motif: "Suivi pendant la grossesse de ma compagne", text: "Accompagnement parfait pendant toute la grossesse. Elle a pu aborder l'accouchement plus sereinement. Merci !", stars: 5 };
+const TEMOIGNAGE = { name: "Thomas D.", motif: "Suivi pendant la grossesse de ma compagne", text: "Accompagnement parfait pendant toute la grossesse. Ma compagne a pu aborder l'accouchement plus sereinement. Merci !", stars: 5 };
 
 const ALL_LINKS = [{ href: "/", label: "Accueil" }, { href: "/osteopathe-sportif", label: "Ostéopathe sportif" }, { href: "/osteopathe-bebe", label: "Ostéopathe bébé" }, { href: "/osteopathe-dos", label: "Mal de dos" }, { href: "/osteopathe-senior", label: "Ostéopathe senior" }, { href: "/tarifs", label: "Tarifs" }, { href: "/blog", label: "Blog" }];
 
 export default function OsteopatheFemmeEnceintePage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <FloatingCTA />
@@ -137,8 +121,8 @@ export default function OsteopatheFemmeEnceintePage() {
               <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Ostéopathie et grossesse à Valence : confort et préparation</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto" aria-hidden />
               <div className="mt-10 space-y-6 text-gray-600 leading-relaxed">
-                <p>La grossesse modifie la posture, sollicite le bassin et le dos et peut provoquer des douleurs lombaires, des sciatiques ou des tensions ligamentaires. L&apos;ostéopathe femme enceinte à Valence (26000) accompagne les futures mamans avec des techniques douces et adaptées à chaque trimestre. En cas de lombalgie ou sciatique, l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe du dos</Link> et l&apos;approche grossesse se complètent ; après l&apos;accouchement, un suivi <Link href="/osteopathe-bebe" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe bébé</Link> est souvent conseillé pour le nourrisson. Le travail porte sur la mobilité du bassin, la libération du diaphragme, le confort du dos et la préparation des tissus pour l&apos;accouchement. Les positions sur la table sont toujours adaptées (couchée sur le côté, semi-assise) pour éviter toute compression du ventre.</p>
-                <p>Le cabinet situé avenue Victor Hugo à Valence reçoit de nombreuses femmes enceintes de Valence et des environs. Chaque séance comprend un interrogatoire (semaine de grossesse, antécédents, motifs de consultation), un examen en douceur puis un traitement personnalisé. Une consultation adulte est au tarif de 55€ ; une facture est remise pour le remboursement par votre mutuelle. Vous pouvez prendre rendez-vous en ligne pour une séance d&apos;ostéopathie pendant la grossesse ou en post-partum.</p>
+                <p>La grossesse modifie la posture, sollicite le bassin et le dos et peut provoquer des douleurs lombaires, des sciatiques ou des tensions ligamentaires. Votre <Link href="/" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe à Valence</Link> accompagne les futures mamans avec des techniques douces et adaptées à chaque trimestre. En cas de lombalgie ou sciatique, l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe du dos</Link> et l&apos;approche grossesse se complètent ; après l&apos;accouchement, un suivi <Link href="/osteopathe-bebe" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe bébé</Link> est souvent conseillé pour le nourrisson. Les sportives enceintes bénéficient également d&apos;un accompagnement avec l&apos;<Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe sportif</Link>. Le travail porte sur la mobilité du bassin, la libération du diaphragme, le confort du dos et la préparation des tissus pour l&apos;accouchement.</p>
+                <p>Le cabinet situé avenue Victor Hugo à Valence reçoit de nombreuses femmes enceintes de la Drôme et des environs. Chaque séance comprend un interrogatoire (semaine de grossesse, antécédents, motifs de consultation), un examen en douceur puis un traitement personnalisé. Consultation : 55€, facture délivrée pour votre mutuelle. Prenez rendez-vous avec votre <Link href="/" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe à Valence</Link> pour un accompagnement grossesse ou post-partum.</p>
               </div>
             </div>
           </SectionReveal>
@@ -164,7 +148,7 @@ export default function OsteopatheFemmeEnceintePage() {
 
           <SectionReveal className="py-16 md:py-20 px-4 md:px-8 bg-offwhite" animate="fade-up">
             <div className="mx-auto max-w-2xl">
-              <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Témoignage patient</h2>
+              <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Témoignage – Ostéopathe Grossesse à Valence</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-8" aria-hidden />
               <div className="card-shadow card-hover rounded-2xl bg-white p-6 border border-bluegray/20 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300">
                 <div className="testimonial-stars flex gap-1 mb-3">
@@ -193,6 +177,9 @@ export default function OsteopatheFemmeEnceintePage() {
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-6" aria-hidden />
               <p className="text-gray-600 mb-6">Consultation adulte : <strong className="text-gold text-2xl">55€</strong> (environ 45 min). Facture pour mutuelle.</p>
               <Link href="/#contact" className="btn-cta inline-block rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90">Demander un rendez-vous</Link>
+              <p className="mt-3 text-sm text-gray-600">
+                ou appelez le <a href="tel:+33757905188" className="text-sage font-medium underline">+33 7 57 90 51 88</a>
+              </p>
             </div>
           </SectionReveal>
 

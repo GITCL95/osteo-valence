@@ -7,6 +7,7 @@ import { getLatestArticles } from "./blog/data";
 import FloatingCTA from "@/components/FloatingCTA";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import SectionWave from "@/components/SectionWave";
+import LatestArticlesBanner from "@/components/LatestArticlesBanner";
 
 // Icônes minimalistes SVG
 const IconHand = () => (
@@ -677,6 +678,8 @@ export default function Home() {
             <ContactForm />
           </div>
         </SectionReveal>
+
+        <LatestArticlesBanner />
 
         {/* Accès & plan */}
         <section className="py-20 md:py-28 px-4 md:px-8 bg-bluegray/10" data-animate="fade-up">

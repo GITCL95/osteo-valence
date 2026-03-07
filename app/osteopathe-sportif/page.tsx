@@ -5,6 +5,7 @@ import SectionWave from "@/components/SectionWave";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import SectionReveal from "@/components/SectionReveal";
 import FloatingCTA from "@/components/FloatingCTA";
+import LatestArticlesBanner from "@/components/LatestArticlesBanner";
 
 const BASE = "https://www.osteo-valence.fr";
 const canonical = `${BASE}/osteopathe-sportif/`;
@@ -175,6 +176,8 @@ export default function OsteopatheSportifPage() {
               </p>
             </div>
           </SectionReveal>
+
+          <LatestArticlesBanner />
 
           {/* Maillage */}
           <SectionReveal className="py-16 md:py-20 px-4 md:px-8 bg-offwhite border-t border-bluegray/20" animate="fade-up">

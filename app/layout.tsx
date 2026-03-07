@@ -143,7 +143,7 @@ export default function RootLayout({
     ],
     prefetch: [
       {
-        where: { href_matches: ["/blog/*"] },
+        where: { href_matches: ["/blog", "/blog/*"] },
         eagerness: "conservative",
       },
     ],

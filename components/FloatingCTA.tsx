@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const TEL = "tel:+33475000000"; // À remplacer par le vrai numéro
+const TEL = "tel:+33757905188";
 
 export default function FloatingCTA() {
   const [open, setOpen] = useState(false);

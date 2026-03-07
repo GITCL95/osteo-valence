@@ -24,18 +24,25 @@ export default function ContactForm() {
   });
   const [formSent, setFormSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSent(true);
-    setForm({
-      nom: "",
-      prenom: "",
-      telephone: "",
-      email: "",
-      motif: "",
-      date: "",
-      message: "",
+    const response = await fetch("https://formspree.io/f/xdaworlj", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
     });
+    if (response.ok) {
+      setFormSent(true);
+      setForm({
+        nom: "",
+        prenom: "",
+        telephone: "",
+        email: "",
+        motif: "",
+        date: "",
+        message: "",
+      });
+    }
   };
 
   const handleChange = (
@@ -62,6 +69,8 @@ export default function ContactForm() {
 
   return (
     <form
+      action="https://formspree.io/f/xdaworlj"
+      method="POST"
       onSubmit={handleSubmit}
       className="space-y-5 rounded-2xl bg-white p-8 shadow-sm border border-bluegray/20"
     >

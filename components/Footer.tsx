@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const PHONE = "+33475000000"; // Remplacer par le numéro réel du cabinet
+const PHONE = "+33757905188";
 
 export default function Footer() {
   return (

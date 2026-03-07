@@ -209,12 +209,12 @@ const TEMOIGNAGES = [
 ];
 
 export const FAQ_ITEMS = [
-  { q: "L'ostéopathie est-elle remboursée ?", a: "L'ostéopathie n'est pas remboursée par l'Assurance Maladie. Plus de 85 % des mutuelles prennent en charge les séances (forfait variable). Une facture vous est délivrée à chaque consultation pour votre demande de remboursement." },
+  { q: "L'ostéopathie est-elle remboursée ?", a: "Non, l'ostéopathie n'est pas remboursée par la Sécurité Sociale. En revanche, plus de 85 % des mutuelles remboursent les séances d'ostéopathie à Valence (de 25€ à 80€ par séance). Une facture conforme est délivrée après chaque consultation." },
   { q: "Combien de séances sont nécessaires ?", a: "Cela dépend du motif et de votre historique. Souvent 1 à 3 séances suffisent pour un motif aigu. Pour un suivi chronique ou en prévention, nous en discutons au premier rendez-vous." },
   { q: "Faut-il une ordonnance pour consulter un ostéopathe ?", a: "Non. Vous pouvez consulter en direct, sans ordonnance. En cas de pathologie connue ou de traitement en cours, il est conseillé d'en informer votre ostéopathe et votre médecin." },
   { q: "L'ostéopathie est-elle douloureuse ?", a: "Les techniques sont adaptées à chaque patient et généralement douces. Certaines manipulations peuvent provoquer un inconfort passager. Votre ressenti est pris en compte et les techniques sont ajustées si besoin." },
   { q: "À partir de quel âge peut-on consulter un ostéopathe ?", a: "Dès la naissance. L'ostéopathie pour nourrissons est courante (coliques, torticolis, plagiocéphalie). Les techniques sont adaptées à l'âge, du bébé au senior." },
-  { q: "Comment se déroule une première séance ?", a: "La première séance comprend un interrogatoire (motif, antécédents), un examen clinique puis un traitement adapté. Prévoyez environ 45 minutes pour un adulte. Apportez vos examens médicaux pertinents si vous en avez." },
+  { q: "Comment se déroule une première séance ?", a: "La première séance chez votre ostéopathe à Valence dure environ 45 minutes. Elle comprend un interrogatoire (motif, antécédents), un examen clinique puis un traitement adapté. Pensez à apporter vos examens médicaux." },
   { q: "Quand consulter un ostéopathe ?", a: "Douleurs vertébrales ou articulaires, après un choc ou une chute, suivi de grossesse, nourrisson (coliques, torticolis, sommeil), prévention (sport, stress, travail sédentaire) ou après un accouchement. En cas de doute, contactez-nous." },
   { q: "Quelle est la différence entre un ostéopathe et un kinésithérapeute ?", a: "L'ostéopathe travaille sur l'ensemble du corps (articulations, muscles, viscères, crâne) pour rétablir la mobilité. Le kiné se concentre sur la rééducation motrice, souvent sur prescription. Les deux approches sont complémentaires." },
 ];
@@ -317,15 +317,15 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-sage/30 blur-3xl opacity-30 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none z-0" aria-hidden />
           <div className="relative z-10 mx-auto max-w-4xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center">
-              Ostéopathe D.O. à Valence : Une Approche Globale de Votre Santé
+              Votre Ostéopathe D.O. à Valence (26000) : Soins Personnalisés pour Toute la Famille
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" aria-hidden />
             <div className="mt-10 space-y-6 text-gray-600 leading-relaxed text-center">
               <p>
-                Ostéopathe D.O. diplômé et installé au 45 avenue Victor Hugo à Valence (26000), je propose des consultations d&apos;ostéopathie adaptées à chaque patient. Ma pratique repose sur des techniques manuelles douces, non invasives, pour traiter les douleurs musculo-squelettiques, les troubles fonctionnels et accompagner toute la famille — du nourrisson au senior — vers un meilleur équilibre corporel.
+                Votre ostéopathe D.O. à Valence vous reçoit au 45 avenue Victor Hugo (26000) pour des consultations adaptées à chaque patient. Du <Link href="/osteopathe-bebe" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">nourrisson</Link> au <Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">senior</Link>, les techniques manuelles douces et non invasives soulagent <Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">les douleurs du dos</Link>, les troubles fonctionnels et les déséquilibres posturaux.
               </p>
               <p>
-                Chaque consultation débute par un bilan complet — écoute de vos antécédents, examen postural et palpation — avant un traitement personnalisé. Mon objectif : identifier l&apos;origine de vos douleurs et restaurer la mobilité de vos tissus pour un soulagement durable. Le cabinet est accessible aux personnes à mobilité réduite et dispose d&apos;un parking à proximité.
+                Chaque consultation débute par un bilan complet : écoute de vos antécédents, examen postural et palpation, avant un traitement personnalisé. L&apos;objectif : identifier l&apos;origine de vos douleurs et restaurer la mobilité pour un soulagement durable. Le cabinet d&apos;ostéopathie à Valence est accessible PMR, avec parking et arrêt de bus à 50 m.
               </p>
             </div>
           </div>

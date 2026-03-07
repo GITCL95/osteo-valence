@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     template: "%s | Ostéopathe Valence",
   },
   description:
-    "Ostéopathe D.O. à Valence (26000). Consultations adultes, bébés, femmes enceintes, sportifs. Techniques douces, mutuelles. Prenez RDV en ligne au cabinet.",
+    "Ostéopathe D.O. à Valence (26000) : consultations adultes, bébés, sportifs, femmes enceintes. Techniques douces, remboursé par les mutuelles. ☎ Prenez RDV en ligne.",
   alternates: {
-    canonical: BASE,
+    canonical: BASE + "/",
   },
   openGraph: {
     title: "Ostéopathe Valence (26000) | Cabinet D.O. – RDV en Ligne",
     description:
-      "Ostéopathe D.O. à Valence (26000). Consultations adultes, bébés, femmes enceintes, sportifs. Techniques douces, mutuelles. Prenez RDV en ligne au cabinet.",
+      "Ostéopathe D.O. à Valence (26000) : consultations adultes, bébés, sportifs, femmes enceintes. Techniques douces, remboursé par les mutuelles. ☎ Prenez RDV en ligne.",
     url: BASE,
     siteName: "Ostéopathe Valence",
     locale: "fr_FR",
@@ -58,10 +58,11 @@ const medicalBusinessSchema = {
   description:
     "Cabinet d'ostéopathie D.O. à Valence (26000). Consultations adultes, nourrissons, femmes enceintes, sportifs et seniors.",
   url: BASE,
-  telephone: "+33475000000",
+  telephone: "+33757905188",
   image: `${BASE}/osteopathe-valence-cabinet.webp`,
   sameAs: [
     "https://www.google.com/maps/place/45+Avenue+Victor+Hugo,+26000+Valence",
+    "https://www.doctolib.fr/osteopathe/valence",
   ],
   areaServed: {
     "@type": "City",

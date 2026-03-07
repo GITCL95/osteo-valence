@@ -7,15 +7,15 @@ import SectionReveal from "@/components/SectionReveal";
 import FloatingCTA from "@/components/FloatingCTA";
 
 const BASE = "https://www.osteo-valence.fr";
-const canonical = `${BASE}/osteopathe-dos`;
+const canonical = `${BASE}/osteopathe-dos/`;
 
 export const metadata: Metadata = {
-  title: "Ostéopathe dos Valence | Cabinet D.O.",
+  title: "Ostéopathe Mal de Dos Valence (26000) – Lombalgie, Sciatique & Hernie | Cabinet D.O.",
   description:
-    "Ostéopathe mal de dos à Valence (26000). Lombalgie, lumbago, sciatique, hernie discale, cervicalgie. Techniques douces, RDV en ligne au cabinet.",
+    "Ostéopathe mal de dos à Valence (26000) : lombalgie, sciatique, hernie discale, cervicalgie. 55€ la séance. ☎ Prenez RDV.",
   alternates: { canonical },
   openGraph: {
-    title: "Ostéopathe dos Valence | Cabinet D.O.",
+    title: "Ostéopathe Mal de Dos Valence (26000) – Lombalgie, Sciatique & Hernie | Cabinet D.O.",
     description: "Ostéopathe mal de dos à Valence. Lombalgie, sciatique, cervicalgie. Techniques douces, RDV en ligne.",
     url: canonical,
     siteName: "Ostéopathe Valence",
@@ -26,24 +26,6 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: [`${BASE}/og-default.jpg`] },
 };
 
-const medicalSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  name: "Ostéopathe Valence",
-  description: "Cabinet d'ostéopathie D.O. à Valence (26000). Ostéopathe mal de dos : lombalgie, sciatique, hernie discale.",
-  url: canonical,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "45 avenue Victor Hugo",
-    addressLocality: "Valence",
-    postalCode: "26000",
-    addressRegion: "Auvergne-Rhône-Alpes",
-    addressCountry: "FR",
-  },
-  geo: { "@type": "GeoCoordinates", latitude: 44.9334, longitude: 4.8924 },
-  medicalSpecialty: "OsteopathicManipulativeMedicine",
-  priceRange: "55€",
-};
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -52,12 +34,15 @@ const serviceSchema = {
   description: "Traitement des douleurs dorsales, cervicalgies, lombalgies, sciatiques, hernie discale à Valence.",
   provider: { "@type": "MedicalBusiness", name: "Ostéopathe Valence", url: BASE },
   areaServed: { "@type": "City", name: "Valence" },
+  offers: { "@type": "Offer", price: "55", priceCurrency: "EUR" },
+  serviceType: "Ostéopathie mal de dos",
+  audience: { "@type": "PeopleAudience", audienceType: "Adultes souffrant de douleurs dorsales" },
 };
 
 const FAQ_ITEMS = [
   {
     q: "Est-ce que l'ostéopathe fait craquer le dos ?",
-    a: "Pas systématiquement. Les « craquements » (techniques de thrust) sont une possibilité parmi d'autres. L'ostéopathe utilise aussi des techniques douces (musculaires, fasciales, viscérales) qui ne font pas craquer. Le choix dépend de votre état, de votre âge et de votre préférence. Vous pouvez toujours indiquer que vous préférez des techniques sans craquement.",
+    a: "Pas systématiquement. Les « craquements » (techniques de thrust) sont une possibilité parmi d'autres. L'ostéopathe à Valence utilise aussi des techniques douces (musculaires, fasciales, viscérales) qui ne font pas craquer. Le choix dépend de votre état, de votre âge et de votre préférence. Vous pouvez toujours indiquer que vous préférez des techniques sans craquement.",
   },
   {
     q: "Combien de séances pour un lumbago ?",
@@ -73,11 +58,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Peut-on consulter en urgence pour un blocage de dos ?",
-    a: "Oui. En cas de blocage aigu (lumbago, torticolis), nous essayons de vous proposer un créneau sous 24 à 48 h selon les disponibilités. Appelez le cabinet pour signaler une urgence. En parallèle, évitez les positions qui augmentent la douleur et consultez un médecin si la douleur est très intense ou s'accompagne de signes neurologiques (jambe qui lâche, perte de sensibilité).",
+    a: "Oui. En cas de blocage aigu (lumbago, torticolis), le cabinet s'efforce de proposer un créneau sous 24 à 48 h selon les disponibilités. Appelez le cabinet pour signaler une urgence. En parallèle, évitez les positions qui augmentent la douleur et consultez un médecin si la douleur est très intense ou s'accompagne de signes neurologiques (jambe qui lâche, perte de sensibilité).",
   },
   {
     q: "L'ostéopathie est-elle efficace contre la sciatique ?",
-    a: "Oui, dans beaucoup de cas. L'ostéopathe cherche à libérer les structures qui compriment ou irritent le nerf sciatique (bassin, vertèbres, muscles). Les techniques sont adaptées à l'origine de la sciatique. Une à quelques séances peuvent suffire pour une sciatique d'origine mécanique. En cas de sciatique persistante ou sévère, un avis médical est important.",
+    a: "Oui, dans beaucoup de cas. L'ostéopathe à Valence cherche à libérer les structures qui compriment ou irritent le nerf sciatique (bassin, vertèbres, muscles). Les techniques sont adaptées à l'origine de la sciatique. Une à quelques séances peuvent suffire pour une sciatique d'origine mécanique. En cas de sciatique persistante ou sévère, un avis médical est important.",
   },
 ];
 
@@ -115,7 +100,6 @@ const ALL_LINKS = [{ href: "/", label: "Accueil" }, { href: "/osteopathe-sportif
 export default function OsteopatheDosPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <FloatingCTA />
@@ -137,8 +121,8 @@ export default function OsteopatheDosPage() {
               <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Mal de dos à Valence : quand consulter un ostéopathe ?</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto" aria-hidden />
               <div className="mt-10 space-y-6 text-gray-600 leading-relaxed">
-                <p>Le mal de dos (lombalgie, cervicalgie, dorsalgie) est l&apos;un des motifs les plus fréquents de consultation en ostéopathie à Valence (26000). Que la douleur soit apparue après un faux mouvement, une position prolongée au travail, un stress ou une ancienne blessure, l&apos;ostéopathe D.O. réalise un bilan global pour identifier les zones de restriction et les compensations qui entretiennent la douleur. Comme pour l&apos;<Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe sportif</Link> ou l&apos;<Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe senior</Link>, le traitement associe des techniques articulaires, musculaires et fasciales, adaptées à votre âge et à votre état de santé. L&apos;objectif est de restaurer la mobilité et de vous donner des conseils pour limiter les récidives.</p>
-                <p>Le cabinet d&apos;ostéopathie avenue Victor Hugo à Valence reçoit de nombreux patients pour des douleurs du dos. La première séance dure environ 45 minutes (interrogatoire, examen, traitement). Une consultation adulte est au tarif de 55€ ; une facture est délivrée pour le remboursement par votre mutuelle. En cas de blocage aigu, nous nous efforçons de vous proposer un rendez-vous rapide. Prenez rendez-vous en ligne pour une séance d&apos;ostéopathie pour le mal de dos à Valence.</p>
+                <p>Le mal de dos (lombalgie, cervicalgie, dorsalgie) est l&apos;un des motifs les plus fréquents de consultation en ostéopathie à Valence (26000). Que la douleur soit apparue après un faux mouvement, une position prolongée au travail, un stress ou une ancienne blessure, l&apos;ostéopathe D.O. réalise un bilan global pour identifier les zones de restriction et les compensations qui entretiennent la douleur. Comme pour l&apos;<Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe sportif</Link> ou l&apos;<Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe senior</Link>, le traitement associe des techniques articulaires, musculaires et fasciales, adaptées à votre âge et à votre état de santé. Les femmes enceintes souffrant du dos peuvent bénéficier d&apos;un accompagnement spécifique avec l&apos;<Link href="/osteopathe-femme-enceinte" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe femme enceinte</Link>. L&apos;objectif de votre <Link href="/" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe à Valence</Link> est de restaurer la mobilité et de vous donner des conseils pour limiter les récidives.</p>
+                <p>Le cabinet d&apos;ostéopathie avenue Victor Hugo à Valence reçoit de nombreux patients pour des douleurs du dos. La première séance dure environ 45 minutes (interrogatoire, examen, traitement). Une consultation adulte est au tarif de 55€ ; une facture est délivrée pour le remboursement par votre mutuelle. En cas de blocage aigu, le cabinet s&apos;efforce de proposer un rendez-vous rapide. Prenez rendez-vous avec votre <Link href="/" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe à Valence</Link> pour une séance adaptée à votre dos.</p>
               </div>
             </div>
           </SectionReveal>
@@ -164,7 +148,7 @@ export default function OsteopatheDosPage() {
 
           <SectionReveal className="py-16 md:py-20 px-4 md:px-8 bg-offwhite" animate="fade-up">
             <div className="mx-auto max-w-2xl">
-              <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Témoignage patient</h2>
+              <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Témoignage – Ostéopathe Mal de Dos à Valence</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-8" aria-hidden />
               <div className="card-shadow card-hover rounded-2xl bg-white p-6 border border-bluegray/20 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300">
                 <div className="testimonial-stars flex gap-1 mb-3">
@@ -193,6 +177,9 @@ export default function OsteopatheDosPage() {
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-6" aria-hidden />
               <p className="text-gray-600 mb-6">Consultation adulte : <strong className="text-gold text-2xl">55€</strong> (environ 45 min). Facture pour mutuelle.</p>
               <Link href="/#contact" className="btn-cta inline-block rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90">Demander un rendez-vous</Link>
+              <p className="mt-3 text-sm text-gray-600">
+                ou appelez le <a href="tel:+33757905188" className="text-sage font-medium underline">+33 7 57 90 51 88</a>
+              </p>
             </div>
           </SectionReveal>
 

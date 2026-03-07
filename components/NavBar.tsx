@@ -143,6 +143,9 @@ export default function NavBar() {
             <Link href="/#faq" className={`text-sm font-medium transition-colors ${linkClass(navScrolled)}`}>
               FAQ
             </Link>
+            <Link href="/blog" className={`text-sm font-medium transition-colors ${linkClass(navScrolled)}`}>
+              Blog
+            </Link>
             <Link href="/#contact" className={`text-sm font-medium transition-colors ${linkClass(navScrolled)}`}>
               Contact
             </Link>

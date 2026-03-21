@@ -23,7 +23,7 @@ export default function MentionsLegalesPage() {
             <h2 className="text-lg font-semibold text-gray-800 mt-6">Éditeur du site</h2>
             <p>
               Le site <strong>www.osteo-valence.fr</strong> est édité par le cabinet
-              d&apos;ostéopathie Ostéopathe Valence, situé au 45 avenue Victor Hugo, 26000 Valence.
+              d&apos;ostéopathie Ostéopathe Valence, situé au 1 avenue Victor Hugo, 26000 Valence.
             </p>
             <p>
               SIRET : [À compléter]
@@ -43,7 +43,7 @@ export default function MentionsLegalesPage() {
             <p>
               Pour toute question relative aux mentions légales ou au cabinet, vous pouvez nous
               contacter via le formulaire de prise de rendez-vous sur la page d&apos;accueil ou
-              vous rendre au cabinet : 45 avenue Victor Hugo, 26000 Valence.
+              vous rendre au cabinet : 1 avenue Victor Hugo, 26000 Valence.
             </p>
           </section>
           <section>

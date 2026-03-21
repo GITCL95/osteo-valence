@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: `${BASE}/og-default.jpg`,
         width: 1200,
         height: 630,
-        alt: "Cabinet d'ostéopathie à Valence – 45 avenue Victor Hugo",
+        alt: "Cabinet d'ostéopathie à Valence – 1 avenue Victor Hugo",
       },
     ],
   },
@@ -61,7 +61,7 @@ const medicalBusinessSchema = {
   telephone: "+33757905188",
   image: `${BASE}/osteopathe-valence-cabinet.webp`,
   sameAs: [
-    "https://www.google.com/maps/place/45+Avenue+Victor+Hugo,+26000+Valence",
+    "https://www.google.com/maps/place/1+Avenue+Victor+Hugo,+26000+Valence",
     "https://www.doctolib.fr/osteopathe/valence",
   ],
   areaServed: {
@@ -80,7 +80,7 @@ const medicalBusinessSchema = {
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "45 avenue Victor Hugo",
+    streetAddress: "1 avenue Victor Hugo",
     addressLocality: "Valence",
     postalCode: "26000",
     addressRegion: "Auvergne-Rhône-Alpes",

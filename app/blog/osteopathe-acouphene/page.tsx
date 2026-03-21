@@ -57,7 +57,7 @@ const faqSchema = {
       name: "Combien coûte une séance pour les acouphènes à Valence ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "La consultation adulte est à 55€ au cabinet avenue Victor Hugo, Valence (26000). Facture pour mutuelle.",
+        text: "La consultation adulte est à 55€ au cabinet 1 avenue Victor Hugo, Valence (26000). Facture pour mutuelle.",
       },
     },
     {
@@ -160,7 +160,7 @@ export default function ArticleAcouphenesPage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Combien coûte une séance pour les acouphènes à Valence ?</p>
-                    <p className="mt-1 text-gray-600 text-sm leading-relaxed">La consultation adulte est à 55€ au cabinet avenue Victor Hugo, Valence (26000). Facture pour mutuelle.</p>
+                    <p className="mt-1 text-gray-600 text-sm leading-relaxed">La consultation adulte est à 55€ au cabinet 1 avenue Victor Hugo, Valence (26000). Facture pour mutuelle.</p>
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Les acouphènes peuvent-ils venir des cervicales ?</p>

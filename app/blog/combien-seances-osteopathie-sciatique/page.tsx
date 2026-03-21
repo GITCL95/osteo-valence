@@ -169,7 +169,7 @@ export default function ArticleSciatiquePage() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Quel est le tarif d&apos;une séance pour une sciatique à Valence ?</p>
-                    <p className="mt-1 text-gray-600 text-sm leading-relaxed">La consultation adulte est au tarif de 55€ au cabinet avenue Victor Hugo à Valence (26000). Une facture est délivrée pour le remboursement par votre mutuelle.</p>
+                    <p className="mt-1 text-gray-600 text-sm leading-relaxed">La consultation adulte est au tarif de 55€ au cabinet 1 avenue Victor Hugo à Valence (26000). Une facture est délivrée pour le remboursement par votre mutuelle.</p>
                   </div>
                   <div>
                     <p className="font-medium text-gray-800">Faut-il faire une IRM avant de consulter l&apos;ostéopathe pour une sciatique ?</p>

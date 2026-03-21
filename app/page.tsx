@@ -323,7 +323,7 @@ export default function Home() {
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" aria-hidden />
             <div className="mt-10 space-y-6 text-gray-600 leading-relaxed text-center">
               <p>
-                Votre ostéopathe D.O. à Valence vous reçoit au 45 avenue Victor Hugo (26000) pour des consultations adaptées à chaque patient. Du <Link href="/osteopathe-bebe" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">nourrisson</Link> au <Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">senior</Link>, les techniques manuelles douces et non invasives soulagent <Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">les douleurs du dos</Link>, les troubles fonctionnels et les déséquilibres posturaux.
+                Votre ostéopathe D.O. à Valence vous reçoit au 1 avenue Victor Hugo (26000) pour des consultations adaptées à chaque patient. Du <Link href="/osteopathe-bebe" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">nourrisson</Link> au <Link href="/osteopathe-senior" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">senior</Link>, les techniques manuelles douces et non invasives soulagent <Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">les douleurs du dos</Link>, les troubles fonctionnels et les déséquilibres posturaux.
               </p>
               <p>
                 Chaque consultation débute par un bilan complet : écoute de vos antécédents, examen postural et palpation, avant un traitement personnalisé. L&apos;objectif : identifier l&apos;origine de vos douleurs et restaurer la mobilité pour un soulagement durable. Le cabinet d&apos;ostéopathie à Valence est accessible PMR, avec parking et arrêt de bus à 50 m.
@@ -691,8 +691,8 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
               <div className="rounded-2xl overflow-hidden card-shadow h-[400px] min-h-[300px]">
                 <iframe
-                  title="Carte – Cabinet Ostéopathe Valence, 45 avenue Victor Hugo"
-                  src="https://www.google.com/maps?q=45+avenue+Victor+Hugo,+26000+Valence,+France&output=embed"
+                  title="Carte – Cabinet Ostéopathe Valence, 1 avenue Victor Hugo"
+                  src="https://www.google.com/maps?q=1+avenue+Victor+Hugo,+26000+Valence,+France&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -707,7 +707,7 @@ export default function Home() {
                   <IconLocation />
                   <div>
                     <p className="font-semibold text-gray-800">Adresse</p>
-                    <p className="text-gray-600 text-sm mt-0.5">45 avenue Victor Hugo, 26000 Valence</p>
+                    <p className="text-gray-600 text-sm mt-0.5">1 avenue Victor Hugo, 26000 Valence</p>
                   </div>
                 </div>
                 <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">

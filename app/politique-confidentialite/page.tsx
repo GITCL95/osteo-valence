@@ -51,7 +51,7 @@ export default function PolitiqueConfidentialitePage() {
               d&apos;un droit d&apos;accès, de rectification, de suppression et de portabilité de vos
               données. Vous pouvez également demander la limitation du traitement ou vous opposer à
               celui-ci. Pour exercer ces droits, contactez-nous via le formulaire du site ou en
-              vous rendant au cabinet (45 avenue Victor Hugo, 26000 Valence). Vous avez le droit
+              vous rendant au cabinet (1 avenue Victor Hugo, 26000 Valence). Vous avez le droit
               d&apos;introduire une réclamation auprès de la CNIL.
             </p>
           </section>

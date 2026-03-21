@@ -11,7 +11,7 @@ export default function Footer() {
             <p className="text-lg font-semibold text-white">
               Ostéopathe Valence — Cabinet d&apos;Ostéopathie D.O.
             </p>
-            <p className="mt-1 text-sm">45 avenue Victor Hugo, 26000 Valence</p>
+            <p className="mt-1 text-sm">1 avenue Victor Hugo, 26000 Valence</p>
             <p className="text-sm">Drôme — Auvergne-Rhône-Alpes</p>
             <p className="mt-2 text-sm">Lundi au Vendredi : 8h – 20h | Samedi : 9h – 13h</p>
             <p className="mt-1 text-sm">

@@ -327,8 +327,12 @@ export default function Home() {
         </SectionReveal>
 
         {/* Avis Google (Elfsight) */}
-        <section className="py-12 px-4 md:px-8 bg-offwhite">
+        <section className="py-16 md:py-24 px-4 md:px-8 bg-offwhite">
           <div className="mx-auto max-w-6xl">
+            <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
+              Ce que disent mes patients
+            </h2>
+            <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-10 rounded-full" aria-hidden />
             <Script
               src="https://elfsightcdn.com/platform.js"
               strategy="lazyOnload"

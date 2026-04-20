@@ -265,33 +265,21 @@ export default function Home() {
         <ScrollAnimations>
         {/* Hero */}
         <section id="accueil" className="relative min-h-screen flex flex-col justify-center px-4 pt-24 pb-16 md:px-8 overflow-hidden">
-          {/* Image de fond (desktop) */}
-          <div className="absolute inset-0 z-0 hidden md:block">
+          {/* Image de fond */}
+          <div className="absolute inset-0 z-0">
             <Image
-              src="/osteopathe-valence-cabinet.webp"
-              alt="Cabinet d'ostéopathie à Valence – salle de consultation lumineuse"
+              src="/cabinet-hero.png"
+              alt="Cabinet d'ostéopathie de Pauline Odeyer – salle de consultation"
               fill
-              className="object-cover hero-parallax"
+              className="object-cover object-center hero-parallax"
               priority
-              quality={85}
+              quality={90}
               sizes="100vw"
             />
           </div>
-          {/* Image de fond (mobile) */}
-          <div className="absolute inset-0 z-0 md:hidden">
-            <Image
-              src="/osteopathe-valence-cabinet-mobile.webp"
-              alt="Ostéopathe à Valence réalisant une manipulation cervicale douce"
-              fill
-              className="object-cover"
-              priority
-              quality={85}
-              sizes="100vw"
-            />
-          </div>
-          {/* Overlay dégradé riche (plus de profondeur) */}
+          {/* Overlay dégradé pour lisibilité du texte */}
           <div
-            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-transparent to-black/40"
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-black/65 via-black/30 to-black/55"
             aria-hidden
           />
           {/* Contenu */}

@@ -229,6 +229,15 @@ a, button {
   to { opacity: 1; }
 }
 
+/* Galerie défilante infinie */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
 /* Désactiver animations si l'utilisateur préfère moins de mouvement */
 @media (prefers-reduced-motion: reduce) {
   .card-hover:hover,
@@ -243,5 +252,8 @@ a, button {
   .testimonial-star {
     animation: none;
     opacity: 1;
+  }
+  .animate-marquee {
+    animation: none;
   }
 }

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Script from "next/script";
 import FaqAccordion from "@/components/FaqAccordion";
 import ContactForm from "@/components/ContactForm";
+import PhotoGallery from "@/components/PhotoGallery";
 import Link from "next/link";
 import { getLatestArticles } from "./blog/data";
 import FloatingCTA from "@/components/FloatingCTA";
@@ -381,6 +382,9 @@ export default function Home() {
           </div>
           <SectionWave fillClass="fill-offwhite" />
         </SectionReveal>
+
+        {/* Galerie photos */}
+        <PhotoGallery />
 
         {/* Avantages */}
         <SectionReveal className="py-20 md:py-28 px-4 md:px-8 bg-offwhite">

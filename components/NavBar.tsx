@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 /* Icônes 20x20 pour le mega menu (couleur sage) */
 const IconSport = () => (
@@ -69,13 +70,22 @@ export default function NavBar() {
         aria-label="Navigation principale"
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-8">
-          <Link
-            href="/"
-            className={`text-xl font-semibold tracking-wide transition-colors ${
-              navScrolled ? "text-sage" : "text-white"
-            }`}
-          >
-            Pauline Odeyer
+          <Link href="/" className="flex items-center gap-3 shrink-0">
+            <Image
+              src="/logo.png"
+              alt="Pauline Odeyer – Ostéopathe D.O."
+              width={48}
+              height={48}
+              className="h-12 w-12 rounded-full object-cover"
+              priority
+            />
+            <span
+              className={`hidden sm:block text-lg font-semibold tracking-wide transition-colors ${
+                navScrolled ? "text-sage" : "text-white"
+              }`}
+            >
+              Pauline Odeyer
+            </span>
           </Link>
           <div className="hidden items-center gap-6 md:flex">
             <Link href="/" className={`text-sm font-medium transition-colors ${linkClass(navScrolled)}`}>

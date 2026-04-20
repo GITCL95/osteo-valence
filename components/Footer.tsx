@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const PHONE = "+33769341945";
 const DOCTOLIB = "https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer";
@@ -9,9 +10,19 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div>
-            <p className="text-lg font-semibold text-white">
-              Pauline Odeyer — Ostéopathe D.O.
-            </p>
+            <div className="flex items-center gap-3 mb-3">
+              <Image
+                src="/logo.png"
+                alt="Pauline Odeyer – Ostéopathe D.O."
+                width={56}
+                height={56}
+                className="h-14 w-14 rounded-full object-cover"
+              />
+              <p className="text-lg font-semibold text-white">
+                Pauline Odeyer<br />
+                <span className="text-sm font-normal text-gray-400">Ostéopathe D.O.</span>
+              </p>
+            </div>
             <p className="mt-2 text-sm font-medium text-gray-400 uppercase tracking-wide">Cabinet de Valence</p>
             <p className="text-sm">9 rue du Lycée, 26000 Valence</p>
             <p className="mt-2 text-sm font-medium text-gray-400 uppercase tracking-wide">Cabinet de Saint Lattier</p>

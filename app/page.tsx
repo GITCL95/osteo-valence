@@ -1,7 +1,7 @@
 import Image from "next/image";
+import Script from "next/script";
 import FaqAccordion from "@/components/FaqAccordion";
 import ContactForm from "@/components/ContactForm";
-import AnimatedCounters from "@/components/AnimatedCounters";
 import Link from "next/link";
 import { getLatestArticles } from "./blog/data";
 import FloatingCTA from "@/components/FloatingCTA";
@@ -326,8 +326,19 @@ export default function Home() {
           </div>
         </SectionReveal>
 
-        {/* Chiffres clés animés */}
-        <AnimatedCounters />
+        {/* Avis Google (Elfsight) */}
+        <section className="py-12 px-4 md:px-8 bg-offwhite">
+          <div className="mx-auto max-w-6xl">
+            <Script
+              src="https://elfsightcdn.com/platform.js"
+              strategy="lazyOnload"
+            />
+            <div
+              className="elfsight-app-74fd3d13-f620-4aa2-b648-6bca1ea8a929"
+              data-elfsight-app-lazy
+            />
+          </div>
+        </section>
 
         {/* Services */}
         <SectionReveal id="services" className="relative py-20 md:py-28 px-4 md:px-8 bg-cream/50 overflow-hidden">

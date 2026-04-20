@@ -199,9 +199,9 @@ const AVANTAGES = [
 ];
 
 const TARIFS = [
-  { title: "Consultation adulte", price: "55€", duration: "environ 45 min" },
-  { title: "Consultation nourrisson / enfant", price: "50€", duration: "environ 30-40 min" },
-  { title: "Consultation à domicile", price: "75€", duration: "déplacement inclus (Valence et alentours)" },
+  { title: "Consultation — toutes séances", price: "60€", duration: "durée : 1h", note: "" },
+  { title: "Enfant jusqu'à 3 ans", price: "45€", duration: "durée : 1h", note: "" },
+  { title: "À domicile", price: "75€ – 90€", duration: "selon déplacement", note: "📞 RDV uniquement par téléphone" },
 ];
 
 const TEMOIGNAGES = [
@@ -550,14 +550,17 @@ export default function Home() {
               Facture délivrée à chaque consultation pour le remboursement par votre mutuelle. Plus de 85 % des complémentaires santé prennent en charge les séances d&apos;ostéopathie (1 à 4 séances par an selon votre contrat).
             </p>
             <div className="grid gap-6 md:grid-cols-3 mt-8">
-              {TARIFS.map(({ title, price, duration }) => (
+              {TARIFS.map(({ title, price, duration, note }) => (
                 <div
                   key={title}
-                  className="card-shadow card-hover rounded-2xl border border-white/30 bg-white/70 backdrop-blur-xl p-8 text-center"
+                  className="card-shadow card-hover rounded-2xl border border-white/30 bg-white/70 backdrop-blur-xl p-8 text-center flex flex-col items-center"
                 >
                   <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
                   <p className="mt-4 text-5xl font-light text-gold">{price}</p>
-                  <p className="mt-2 text-sm text-gray-600">{duration}</p>
+                  <p className="mt-2 text-sm text-gray-500">{duration}</p>
+                  {note && (
+                    <p className="mt-3 text-xs font-medium text-sage bg-sage/10 rounded-full px-3 py-1">{note}</p>
+                  )}
                 </div>
               ))}
             </div>

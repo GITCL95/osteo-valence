@@ -78,8 +78,8 @@ const medicalBusinessSchema = {
     "@type": "OfferCatalog",
     name: "Consultations d'ostéopathie",
     itemListElement: [
-      { "@type": "Offer", name: "Consultation adulte", price: "55", priceCurrency: "EUR" },
-      { "@type": "Offer", name: "Consultation nourrisson / enfant", price: "50", priceCurrency: "EUR" },
+      { "@type": "Offer", name: "Consultation ostéopathie (1h)", price: "60", priceCurrency: "EUR" },
+      { "@type": "Offer", name: "Consultation enfant jusqu'à 3 ans (1h)", price: "45", priceCurrency: "EUR" },
       { "@type": "Offer", name: "Consultation à domicile", price: "75", priceCurrency: "EUR" },
     ],
   },
@@ -96,7 +96,7 @@ const medicalBusinessSchema = {
     latitude: 44.9334,
     longitude: 4.8924,
   },
-  priceRange: "50€ - 75€",
+  priceRange: "45€ - 90€",
   medicalSpecialty: "Osteopathic",
 };
 

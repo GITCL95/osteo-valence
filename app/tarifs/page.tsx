@@ -13,7 +13,7 @@ const canonical = `${BASE}/tarifs`;
 export const metadata: Metadata = {
   title: "Tarifs Ostéopathe Valence (26000) | Consultations & Remboursement Mutuelle",
   description:
-    "Tarifs ostéopathe Valence 26000 : adulte 55€, nourrisson 50€, domicile 75€. Remboursement mutuelle. Prenez RDV en ligne.",
+    "Tarifs ostéopathe Pauline Odeyer : consultation 60€ (1h), enfant -3 ans 45€, domicile 75-90€. Remboursement mutuelle. RDV sur Doctolib.",
   alternates: { canonical },
   openGraph: {
     title: "Tarifs Ostéopathe Valence (26000) | Cabinet D.O.",
@@ -40,7 +40,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Le tarif est-il le même pour une première consultation ?",
-    a: "Oui. Le tarif est identique pour une première consultation et pour les séances de suivi (55€ adulte, 50€ nourrisson/enfant, 75€ à domicile). La première séance est un peu plus longue (environ 45 min pour un adulte) car elle comprend un interrogatoire détaillé et un examen complet.",
+    a: "Oui. Le tarif est identique pour une première consultation et pour les séances de suivi : 60€ pour toutes les séances (adultes, enfants de plus de 3 ans), 45€ pour les enfants jusqu'à 3 ans, 75€ à 90€ à domicile selon le déplacement. Chaque séance dure 1 heure.",
   },
   {
     q: "Peut-on payer en plusieurs fois ?",
@@ -48,7 +48,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Y a-t-il un supplément le samedi ?",
-    a: "Non. Les tarifs sont les mêmes tous les jours de la semaine (y compris le samedi). Consultation adulte 55€, nourrisson/enfant 50€, à domicile 75€. Les créneaux du samedi matin sont souvent pris rapidement ; réservez à l'avance si possible.",
+    a: "Non. Les tarifs sont les mêmes tous les jours de la semaine (y compris le samedi) : 60€ pour toutes les séances, 45€ pour les enfants jusqu'à 3 ans. Les créneaux du samedi matin sont souvent pris rapidement ; réservez à l'avance via Doctolib si possible.",
   },
 ];
 
@@ -63,9 +63,9 @@ const faqSchema = {
 };
 
 const TARIFS = [
-  { title: "Consultation adulte", price: "55€", duration: "environ 45 min" },
-  { title: "Consultation nourrisson / enfant", price: "50€", duration: "environ 30-40 min" },
-  { title: "Consultation à domicile", price: "75€", duration: "déplacement inclus (Valence et alentours)" },
+  { title: "Consultation — toutes séances", price: "60€", duration: "durée : 1h", note: "" },
+  { title: "Enfant jusqu'à 3 ans", price: "45€", duration: "durée : 1h", note: "" },
+  { title: "À domicile", price: "75€ – 90€", duration: "selon déplacement", note: "📞 RDV uniquement par téléphone" },
 ];
 
 const ALL_LINKS = [
@@ -105,11 +105,14 @@ export default function TarifsPage() {
               <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Nos tarifs de consultation</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-10" aria-hidden />
               <div className="grid gap-6 md:grid-cols-3">
-                {TARIFS.map(({ title, price, duration }) => (
-                  <div key={title} className="card-shadow card-hover rounded-2xl border border-white/50 bg-white/70 backdrop-blur-sm p-8 text-center hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+                {TARIFS.map(({ title, price, duration, note }) => (
+                  <div key={title} className="card-shadow card-hover rounded-2xl border border-white/50 bg-white/70 backdrop-blur-sm p-8 text-center flex flex-col items-center hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
                     <h3 className="text-lg font-semibold text-gray-800">{title}</h3>
                     <p className="mt-4 text-5xl font-light text-gold">{price}</p>
                     <p className="mt-2 text-sm text-gray-600">{duration}</p>
+                    {note && (
+                      <p className="mt-3 text-xs font-medium text-sage bg-sage/10 rounded-full px-3 py-1">{note}</p>
+                    )}
                   </div>
                 ))}
               </div>
@@ -162,9 +165,11 @@ export default function TarifsPage() {
             <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-8" aria-hidden />
             <div className="grid gap-6 md:grid-cols-2 text-gray-600">
               <div className="card-shadow rounded-2xl bg-white p-6 border border-bluegray/20">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Adresse</h3>
-                <p>1 avenue Victor Hugo<br />26000 Valence</p>
-                <p className="mt-2 text-sm">Parking à proximité. Cabinet accessible.</p>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">Adresses</h3>
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Valence</p>
+                <p>9 rue du Lycée, 26000 Valence</p>
+                <p className="mt-2 text-sm font-medium text-gray-500 uppercase tracking-wide">Saint Lattier</p>
+                <p>55 allée du Cultil, 38840 Saint Lattier</p>
               </div>
               <div className="card-shadow rounded-2xl bg-white p-6 border border-bluegray/20">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Horaires</h3>

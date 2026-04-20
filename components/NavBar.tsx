@@ -75,7 +75,7 @@ export default function NavBar() {
               navScrolled ? "text-sage" : "text-white"
             }`}
           >
-            Ostéopathe Valence
+            Pauline Odeyer
           </Link>
           <div className="hidden items-center gap-6 md:flex">
             <Link href="/" className={`text-sm font-medium transition-colors ${linkClass(navScrolled)}`}>
@@ -146,12 +146,14 @@ export default function NavBar() {
             <Link href="/#contact" className={`text-sm font-medium transition-colors ${linkClass(navScrolled)}`}>
               Contact
             </Link>
-            <Link
-              href="/#contact"
+            <a
+              href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-sage px-5 py-2.5 text-sm font-medium text-white shadow-md transition hover:bg-sage/90"
             >
               Prendre RDV
-            </Link>
+            </a>
           </div>
           <button
             type="button"
@@ -231,13 +233,15 @@ export default function NavBar() {
               <Link href="/#contact" onClick={closeMobileMenu} className="py-2 font-medium text-gray-700">
                 Contact
               </Link>
-              <Link
-                href="/#contact"
+              <a
+                href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={closeMobileMenu}
-                className="mt-2 rounded-full bg-sage py-2.5 text-center font-medium text-white"
+                className="mt-2 rounded-full bg-sage py-2.5 text-center font-medium text-white block"
               >
                 Prendre RDV
-              </Link>
+              </a>
             </div>
           </div>
         )}

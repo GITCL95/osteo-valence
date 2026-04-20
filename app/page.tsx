@@ -176,22 +176,24 @@ const SERVICES = [
 ];
 
 const QUARTIERS = [
-  "Centre-ville",
+  "Centre-ville Valence",
   "Victor Hugo",
   "Fontbarlettes",
   "Le Plan",
   "Chamberlière",
   "L'Épervière",
-  "Valensolles",
   "Briffaut",
-  "Les Baumes",
-  "Châteauvert",
+  "Romans-sur-Isère",
+  "Saint-Marcellin",
+  "Vinay",
+  "Beaurepaire",
+  "Saint Lattier",
 ];
 
 const AVANTAGES = [
-  { title: "Cabinet moderne et accessible", text: "Situé avenue Victor Hugo, avec accès facile et parking à proximité.", Icon: IconBuilding },
+  { title: "Deux cabinets à votre service", text: "Consultations à Valence (rue du Lycée) et à Saint Lattier (allée du Cultil), pour votre commodité.", Icon: IconBuilding },
   { title: "Techniques douces et non invasives", text: "Approche adaptée à chaque patient, du nourrisson au senior.", Icon: IconHeart },
-  { title: "Prise en charge rapide", text: "Urgences possibles sous 24h à 48h selon disponibilités.", Icon: IconClock },
+  { title: "Prise de RDV facile", text: "Réservation en ligne 24h/24 via Doctolib, sans attente.", Icon: IconClock },
   { title: "Remboursé par les mutuelles", text: "Plus de 85 % des mutuelles prennent en charge l'ostéopathie.", Icon: IconShield },
 ];
 
@@ -295,17 +297,22 @@ export default function Home() {
           {/* Contenu */}
           <div className="relative z-10 mx-auto max-w-4xl text-center">
             <h1 className="text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl [text-shadow:_0_2px_20px_rgba(0,0,0,0.3)]">
-              Ostéopathe à Valence – Cabinet d&apos;Ostéopathie D.O.
+              Pauline Odeyer — Ostéopathe D.O.
             </h1>
-            <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-white leading-relaxed [text-shadow:_0_2px_8px_rgba(0,0,0,0.8),_0_0_1px_rgba(0,0,0,0.9)]">
+            <p className="mt-4 text-lg md:text-xl text-white/90 font-light [text-shadow:_0_1px_8px_rgba(0,0,0,0.6)]">
+              Valence (26) · Saint Lattier (38)
+            </p>
+            <p className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-white leading-relaxed [text-shadow:_0_2px_8px_rgba(0,0,0,0.8),_0_0_1px_rgba(0,0,0,0.9)]">
               Retrouvez mobilité, confort et bien-être grâce à des soins ostéopathiques personnalisés
             </p>
             <div className="mt-10">
               <a
-                href="#contact"
+                href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-cta inline-block rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
               >
-                Prendre rendez-vous
+                Prendre rendez-vous sur Doctolib
               </a>
             </div>
           </div>
@@ -317,15 +324,15 @@ export default function Home() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-sage/30 blur-3xl opacity-30 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none z-0" aria-hidden />
           <div className="relative z-10 mx-auto max-w-4xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center">
-              Ostéopathe D.O. à Valence : Une Approche Globale de Votre Santé
+              Pauline Odeyer, Ostéopathe D.O. — Une Approche Globale de Votre Santé
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" aria-hidden />
             <div className="mt-10 space-y-6 text-gray-600 leading-relaxed text-center">
               <p>
-                Ostéopathe D.O. diplômé et installé au 45 avenue Victor Hugo à Valence (26000), je propose des consultations d&apos;ostéopathie adaptées à chaque patient. Ma pratique repose sur des techniques manuelles douces, non invasives, pour traiter les douleurs musculo-squelettiques, les troubles fonctionnels et accompagner toute la famille — du nourrisson au senior — vers un meilleur équilibre corporel.
+                Ostéopathe D.O. diplômée, Pauline Odeyer exerce au <strong>9 rue du Lycée à Valence (26000)</strong> et au <strong>55 allée du Cultil à Saint Lattier (38840)</strong>. Elle propose des consultations d&apos;ostéopathie adaptées à chaque patient, reposant sur des techniques manuelles douces et non invasives, pour traiter les douleurs musculo-squelettiques, les troubles fonctionnels et accompagner toute la famille — du nourrisson au senior — vers un meilleur équilibre corporel.
               </p>
               <p>
-                Chaque consultation débute par un bilan complet — écoute de vos antécédents, examen postural et palpation — avant un traitement personnalisé. Mon objectif : identifier l&apos;origine de vos douleurs et restaurer la mobilité de vos tissus pour un soulagement durable. Le cabinet est accessible aux personnes à mobilité réduite et dispose d&apos;un parking à proximité.
+                Chaque consultation débute par un bilan complet — écoute de vos antécédents, examen postural et palpation — avant un traitement personnalisé. L&apos;objectif : identifier l&apos;origine de vos douleurs et restaurer la mobilité de vos tissus pour un soulagement durable.
               </p>
             </div>
           </div>
@@ -339,7 +346,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 w-[28rem] h-[28rem] bg-cream blur-3xl opacity-40 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none z-0" aria-hidden />
           <div className="relative z-10 mx-auto max-w-6xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Nos Soins en Ostéopathie à Valence
+              Soins en Ostéopathie — Pour Toute la Famille
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-6 rounded-full" aria-hidden />
             <p className="text-center text-gray-600 max-w-2xl mx-auto mb-14">
@@ -376,7 +383,7 @@ export default function Home() {
         <SectionReveal className="py-20 md:py-28 px-4 md:px-8 bg-offwhite">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Pourquoi Choisir Notre Cabinet d&apos;Ostéopathie à Valence
+              Pourquoi Consulter Pauline Odeyer ?
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-14 rounded-full" aria-hidden />
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -395,7 +402,7 @@ export default function Home() {
         <SectionReveal className="py-20 md:py-28 px-4 md:px-8 bg-offwhite">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Quand Consulter un Ostéopathe à Valence ?
+              Quand Consulter Pauline Odeyer ?
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-12 rounded-full" aria-hidden />
             <div className="space-y-10 text-gray-600 leading-relaxed">
@@ -529,7 +536,7 @@ export default function Home() {
           <div className="absolute top-1/2 left-0 w-80 h-80 bg-gold/10 blur-3xl rounded-full -translate-x-1/2 pointer-events-none z-0" aria-hidden />
           <div className="relative z-10 mx-auto max-w-4xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Tarifs des Consultations d&apos;Ostéopathie à Valence
+              Tarifs des Consultations
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" aria-hidden />
             <p className="text-center text-gray-600 mb-4 max-w-2xl mx-auto mt-6">
@@ -554,7 +561,7 @@ export default function Home() {
         <SectionReveal className="py-20 md:py-28 px-4 md:px-8 bg-offwhite">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Avis Patients – Témoignages de Notre Cabinet à Valence
+              Avis Patients
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-14 rounded-full" aria-hidden />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -576,14 +583,16 @@ export default function Home() {
         <SectionReveal id="quartiers" className="py-20 md:py-28 px-4 md:px-8 bg-cream/50">
           <div className="mx-auto max-w-4xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Votre Ostéopathe dans Tous les Quartiers de Valence
+              Votre Ostéopathe à Valence et en Isère
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-8 rounded-full" aria-hidden />
             <div className="flex flex-wrap justify-center gap-3 mb-8" data-animate="stagger">
               {QUARTIERS.map((quartier) => (
                 <a
                   key={quartier}
-                  href="#contact"
+                  href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   title={`Prendre rendez-vous – cabinet accessible depuis ${quartier}`}
                   aria-label={`Prendre rendez-vous – cabinet accessible depuis ${quartier}`}
                   className="badge-quartier inline-flex items-center gap-2 rounded-full border-2 border-sage bg-white px-5 py-3 min-h-[44px] min-w-[44px] text-sm font-medium text-gray-800 card-shadow transition-all duration-300 hover:bg-sage hover:text-white hover:border-sage focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
@@ -594,7 +603,7 @@ export default function Home() {
               ))}
             </div>
             <p className="text-center text-gray-600 max-w-2xl mx-auto text-sm leading-relaxed">
-              Que vous résidiez en centre-ville, à Fontbarlettes ou dans tout autre quartier de Valence et ses environs, notre cabinet vous accueille du lundi au samedi. Nous intervenons également à domicile dans un rayon de 15 km autour de Valence.
+              Pauline Odeyer reçoit ses patients à Valence (Drôme) et à Saint Lattier (Isère). Que vous veniez de Valence, Romans-sur-Isère, Saint-Marcellin ou des environs, l&apos;un des deux cabinets est facilement accessible.
             </p>
           </div>
         </SectionReveal>
@@ -603,7 +612,7 @@ export default function Home() {
         <SectionReveal id="faq" className="py-20 md:py-28 px-4 md:px-8 bg-cream/50">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Questions Fréquentes sur l&apos;Ostéopathie à Valence
+              Questions Fréquentes
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-14 rounded-full" aria-hidden />
             <FaqAccordion items={FAQ_ITEMS} />
@@ -668,12 +677,31 @@ export default function Home() {
         <SectionReveal id="contact" className="py-20 md:py-28 px-4 md:px-8 bg-offwhite">
           <div className="mx-auto max-w-2xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Prendre Rendez-vous avec Votre Ostéopathe à Valence
+              Prendre Rendez-vous avec Pauline Odeyer
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 rounded-full" aria-hidden />
-            <p className="text-center text-gray-600 mb-8 mt-6">
-              Nous vous recontactons sous 24h pour confirmer votre créneau.
+            <p className="text-center text-gray-600 mb-6 mt-6">
+              Réservez directement en ligne via Doctolib, ou utilisez le formulaire ci-dessous pour toute question.
             </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+              <a
+                href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-cta inline-flex items-center gap-2 rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                Réserver sur Doctolib
+              </a>
+              <a
+                href="tel:+33769341945"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-sage px-8 py-4 text-base font-medium text-sage hover:bg-sage hover:text-white transition focus:outline-none focus:ring-2 focus:ring-sage focus:ring-offset-2"
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                07 69 34 19 45
+              </a>
+            </div>
+            <div className="text-center text-gray-500 text-sm mb-6">— ou envoyez un message —</div>
             <ContactForm />
           </div>
         </SectionReveal>
@@ -682,57 +710,99 @@ export default function Home() {
         <section className="py-20 md:py-28 px-4 md:px-8 bg-bluegray/10" data-animate="fade-up">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-3xl font-light text-gray-800 md:text-4xl text-center mb-4">
-              Accès au Cabinet – Ostéopathe à Valence
+              Accès aux Cabinets
             </h2>
             <div className="w-16 h-1 bg-gold mx-auto mt-4 mb-12 rounded-full" aria-hidden />
-            <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              <div className="rounded-2xl overflow-hidden card-shadow h-[400px] min-h-[300px]">
-                <iframe
-                  title="Carte – Cabinet Ostéopathe Valence, 45 avenue Victor Hugo"
-                  src="https://www.google.com/maps?q=45+avenue+Victor+Hugo,+26000+Valence,+France&output=embed"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full min-h-[300px]"
-                />
+
+            {/* Cabinet Valence */}
+            <div className="mb-14">
+              <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
+                Cabinet de Valence (26000)
+              </h3>
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="rounded-2xl overflow-hidden card-shadow h-[360px] min-h-[260px]">
+                  <iframe
+                    title="Carte – Cabinet Pauline Odeyer, 9 rue du Lycée, Valence"
+                    src="https://www.google.com/maps?q=9+rue+du+Lycée,+26000+Valence,+France&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full min-h-[260px]"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
+                    <IconLocation />
+                    <div>
+                      <p className="font-semibold text-gray-800">Adresse</p>
+                      <p className="text-gray-600 text-sm mt-0.5">9 rue du Lycée, 26000 Valence</p>
+                    </div>
+                  </div>
+                  <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
+                    <IconTime />
+                    <div>
+                      <p className="font-semibold text-gray-800">Téléphone</p>
+                      <p className="text-gray-600 text-sm mt-0.5">
+                        <a href="tel:+33769341945" className="hover:text-sage transition">07 69 34 19 45</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col gap-4">
-                <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <IconLocation />
-                  <div>
-                    <p className="font-semibold text-gray-800">Adresse</p>
-                    <p className="text-gray-600 text-sm mt-0.5">45 avenue Victor Hugo, 26000 Valence</p>
-                  </div>
+            </div>
+
+            {/* Cabinet Saint Lattier */}
+            <div>
+              <h3 className="text-xl font-semibold text-gray-800 mb-6 text-center">
+                Cabinet de Saint Lattier (38840)
+              </h3>
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                <div className="rounded-2xl overflow-hidden card-shadow h-[360px] min-h-[260px]">
+                  <iframe
+                    title="Carte – Cabinet Pauline Odeyer, Saint Lattier"
+                    src="https://www.google.com/maps?q=55+allée+du+Cultil,+38840+Saint-Lattier,+France&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full min-h-[260px]"
+                  />
                 </div>
-                <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <IconTime />
-                  <div>
-                    <p className="font-semibold text-gray-800">Horaires</p>
-                    <p className="text-gray-600 text-sm mt-0.5">Lundi-Vendredi 8h-20h, Samedi 9h-13h</p>
+                <div className="flex flex-col gap-4">
+                  <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
+                    <IconLocation />
+                    <div>
+                      <p className="font-semibold text-gray-800">Adresse</p>
+                      <p className="text-gray-600 text-sm mt-0.5">55 allée du Cultil, 38840 Saint Lattier</p>
+                    </div>
                   </div>
-                </div>
-                <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <IconParking />
-                  <div>
-                    <p className="font-semibold text-gray-800">Parking</p>
-                    <p className="text-gray-600 text-sm mt-0.5">Parking gratuit à proximité</p>
+                  <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
+                    <IconTime />
+                    <div>
+                      <p className="font-semibold text-gray-800">Téléphone</p>
+                      <p className="text-gray-600 text-sm mt-0.5">
+                        <a href="tel:+33769341945" className="hover:text-sage transition">07 69 34 19 45</a>
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <IconWheelchair />
-                  <div>
-                    <p className="font-semibold text-gray-800">Accessibilité</p>
-                    <p className="text-gray-600 text-sm mt-0.5">Cabinet accessible PMR</p>
-                  </div>
-                </div>
-                <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
-                  <IconBus />
-                  <div>
-                    <p className="font-semibold text-gray-800">Transports</p>
-                    <p className="text-gray-600 text-sm mt-0.5">Arrêt de bus &quot;Victor Hugo&quot; à 50 m</p>
+                  <div className="rounded-xl bg-white p-5 card-shadow border border-bluegray/20 flex items-start gap-4">
+                    <IconLocation />
+                    <div>
+                      <p className="font-semibold text-gray-800">RDV en ligne</p>
+                      <a
+                        href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sage text-sm mt-0.5 hover:underline font-medium"
+                      >
+                        Réserver sur Doctolib →
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 
-const TEL = "tel:+33475000000"; // À remplacer par le vrai numéro
+const TEL = "tel:+33769341945";
+const DOCTOLIB = "https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer";
 
 export default function FloatingCTA() {
   const [open, setOpen] = useState(false);
@@ -20,16 +21,10 @@ export default function FloatingCTA() {
     return () => obs.disconnect();
   }, []);
 
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
-  };
-
   if (hidden) return null;
 
   return (
     <div ref={ref} className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Sous-boutons (au-dessus du bouton principal) */}
       {open && (
         <>
           <a
@@ -39,15 +34,16 @@ export default function FloatingCTA() {
             <span aria-hidden>📞</span>
             Appeler
           </a>
-          <button
-            type="button"
-            onClick={scrollToContact}
+          <a
+            href={DOCTOLIB}
+            target="_blank"
+            rel="noopener noreferrer"
             className="floating-cta-sub flex items-center gap-2 rounded-full bg-white px-4 py-2.5 text-sm font-medium text-gray-800 shadow-lg transition-all duration-300 hover:bg-sage hover:text-white"
             style={{ animationDelay: "0.05s" }}
           >
             <span aria-hidden>📅</span>
             Prendre RDV
-          </button>
+          </a>
         </>
       )}
       {/* Bouton principal */}

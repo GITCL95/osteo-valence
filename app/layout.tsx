@@ -15,20 +15,20 @@ const BASE = "https://www.osteo-valence.fr";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ostéopathe Valence (26000) | Cabinet D.O. – RDV en Ligne",
-    template: "%s | Ostéopathe Valence",
+    default: "Pauline Odeyer – Ostéopathe D.O. à Valence (26) et Saint Lattier (38)",
+    template: "%s | Pauline Odeyer Ostéopathe",
   },
   description:
-    "Ostéopathe D.O. à Valence (26000). Consultations adultes, bébés, femmes enceintes, sportifs. Techniques douces, mutuelles. Prenez RDV en ligne au cabinet.",
+    "Pauline Odeyer, ostéopathe D.O. à Valence (9 rue du Lycée) et Saint Lattier (55 allée du Cultil). Consultations adultes, bébés, femmes enceintes, sportifs. RDV sur Doctolib.",
   alternates: {
     canonical: BASE,
   },
   openGraph: {
-    title: "Ostéopathe Valence (26000) | Cabinet D.O. – RDV en Ligne",
+    title: "Pauline Odeyer – Ostéopathe D.O. à Valence et Saint Lattier",
     description:
-      "Ostéopathe D.O. à Valence (26000). Consultations adultes, bébés, femmes enceintes, sportifs. Techniques douces, mutuelles. Prenez RDV en ligne au cabinet.",
+      "Pauline Odeyer, ostéopathe D.O. à Valence (26) et Saint Lattier (38). Techniques douces, prise en charge mutuelles. RDV disponibles sur Doctolib.",
     url: BASE,
-    siteName: "Ostéopathe Valence",
+    siteName: "Pauline Odeyer Ostéopathe",
     locale: "fr_FR",
     type: "website",
     images: [
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
         url: `${BASE}/og-default.jpg`,
         width: 1200,
         height: 630,
-        alt: "Cabinet d'ostéopathie à Valence – 45 avenue Victor Hugo",
+        alt: "Pauline Odeyer – Ostéopathe D.O. à Valence et Saint Lattier",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ostéopathe Valence (26000) | Cabinet D.O.",
-    description: "Ostéopathe D.O. à Valence. Consultations adultes, bébés, sportifs. Prenez RDV en ligne.",
+    title: "Pauline Odeyer – Ostéopathe D.O. Valence & Saint Lattier",
+    description: "Ostéopathe D.O. à Valence et Saint Lattier. Consultations adultes, bébés, sportifs. RDV sur Doctolib.",
     images: [`${BASE}/og-default.jpg`],
   },
   verification: {
@@ -54,20 +54,26 @@ export const metadata: Metadata = {
 const medicalBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
-  name: "Ostéopathe Valence",
+  name: "Pauline Odeyer – Ostéopathe D.O.",
   description:
-    "Cabinet d'ostéopathie D.O. à Valence (26000). Consultations adultes, nourrissons, femmes enceintes, sportifs et seniors.",
+    "Pauline Odeyer, ostéopathe D.O. à Valence (26000) et Saint Lattier (38840). Consultations adultes, nourrissons, femmes enceintes, sportifs et seniors.",
   url: BASE,
-  telephone: "+33475000000",
+  telephone: "+33769341945",
   image: `${BASE}/osteopathe-valence-cabinet.webp`,
   sameAs: [
-    "https://www.google.com/maps/place/45+Avenue+Victor+Hugo,+26000+Valence",
+    "https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer",
   ],
-  areaServed: {
-    "@type": "City",
-    name: "Valence",
-    sameAs: "https://fr.wikipedia.org/wiki/Valence_(Dr%C3%B4me)",
-  },
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Valence",
+      sameAs: "https://fr.wikipedia.org/wiki/Valence_(Dr%C3%B4me)",
+    },
+    {
+      "@type": "City",
+      name: "Saint Lattier",
+    },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Consultations d'ostéopathie",
@@ -79,7 +85,7 @@ const medicalBusinessSchema = {
   },
   address: {
     "@type": "PostalAddress",
-    streetAddress: "45 avenue Victor Hugo",
+    streetAddress: "9 rue du Lycée",
     addressLocality: "Valence",
     postalCode: "26000",
     addressRegion: "Auvergne-Rhône-Alpes",
@@ -90,41 +96,20 @@ const medicalBusinessSchema = {
     latitude: 44.9334,
     longitude: 4.8924,
   },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "20:00",
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: "Saturday",
-      opens: "09:00",
-      closes: "13:00",
-    },
-  ],
   priceRange: "50€ - 75€",
   medicalSpecialty: "Osteopathic",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    bestRating: "5",
-    worstRating: "1",
-    ratingCount: "127",
-    reviewCount: "127",
-  },
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Ostéopathe Valence",
+  name: "Pauline Odeyer Ostéopathe",
   url: BASE,
   inLanguage: "fr-FR",
   publisher: {
-    "@type": "Organization",
-    name: "Cabinet d'Ostéopathie Valence",
+    "@type": "Person",
+    name: "Pauline Odeyer",
+    jobTitle: "Ostéopathe D.O.",
   },
 };
 

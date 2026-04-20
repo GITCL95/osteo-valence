@@ -163,7 +163,7 @@ export default function TarifsPage() {
             <div className="grid gap-6 md:grid-cols-2 text-gray-600">
               <div className="card-shadow rounded-2xl bg-white p-6 border border-bluegray/20">
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">Adresse</h3>
-                <p>45 avenue Victor Hugo<br />26000 Valence</p>
+                <p>1 avenue Victor Hugo<br />26000 Valence</p>
                 <p className="mt-2 text-sm">Parking à proximité. Cabinet accessible.</p>
               </div>
               <div className="card-shadow rounded-2xl bg-white p-6 border border-bluegray/20">

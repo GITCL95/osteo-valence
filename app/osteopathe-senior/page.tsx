@@ -5,16 +5,17 @@ import SectionWave from "@/components/SectionWave";
 import ScrollAnimations from "@/components/ScrollAnimations";
 import SectionReveal from "@/components/SectionReveal";
 import FloatingCTA from "@/components/FloatingCTA";
+import LatestArticlesBanner from "@/components/LatestArticlesBanner";
 
 const BASE = "https://www.osteo-valence.fr";
-const canonical = `${BASE}/osteopathe-senior`;
+const canonical = `${BASE}/osteopathe-senior/`;
 
 export const metadata: Metadata = {
-  title: "Ostéopathe senior Valence | Cabinet D.O.",
-  description: "Ostéopathe senior à Valence (26000). Mobilité, arthrose, équilibre, prévention des chutes. Techniques douces. Consultations à domicile. Prenez RDV.",
+  title: "Ostéopathe Senior Valence (26000) – Arthrose, Mobilité & Domicile | Cabinet D.O.",
+  description: "Ostéopathe senior à Valence (26000) : arthrose, mobilité, équilibre, prévention des chutes. 55€ au cabinet, 75€ à domicile. ☎ Prenez RDV.",
   alternates: { canonical },
   openGraph: {
-    title: "Ostéopathe senior Valence | Cabinet D.O.",
+    title: "Ostéopathe Senior Valence (26000) – Arthrose, Mobilité & Domicile | Cabinet D.O.",
     description: "Ostéopathe senior à Valence. Confort, mobilité, prévention. Prenez RDV.",
     url: canonical,
     siteName: "Ostéopathe Valence",
@@ -25,16 +26,15 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", images: [`${BASE}/og-default.jpg`] },
 };
 
-const medicalSchema = { "@context": "https://schema.org", "@type": "MedicalBusiness", name: "Ostéopathe Valence", description: "Cabinet d'ostéopathie D.O. à Valence (26000). Ostéopathe senior : mobilité, arthrose, prévention des chutes.", url: canonical, address: { "@type": "PostalAddress", streetAddress: "45 avenue Victor Hugo", addressLocality: "Valence", postalCode: "26000", addressRegion: "Auvergne-Rhône-Alpes", addressCountry: "FR" }, geo: { "@type": "GeoCoordinates", latitude: 44.9334, longitude: 4.8924 }, medicalSpecialty: "GeriatricMedicine", priceRange: "55€" };
 
-const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Ostéopathie seniors", description: "Amélioration de la mobilité, soulagement de l'arthrose, travail sur l'équilibre et prévention des chutes à Valence.", provider: { "@type": "MedicalBusiness", name: "Ostéopathe Valence", url: BASE }, areaServed: { "@type": "City", name: "Valence" } };
+const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "Ostéopathie seniors", description: "Amélioration de la mobilité, soulagement de l'arthrose, travail sur l'équilibre et prévention des chutes à Valence.", provider: { "@type": "MedicalBusiness", name: "Ostéopathe Valence", url: BASE }, areaServed: { "@type": "City", name: "Valence" }, offers: [{ "@type": "Offer", name: "Consultation cabinet", price: "55", priceCurrency: "EUR" }, { "@type": "Offer", name: "Consultation domicile", price: "75", priceCurrency: "EUR" }], serviceType: "Ostéopathie gériatrique", audience: { "@type": "PeopleAudience", audienceType: "Seniors" } };
 
 const FAQ_ITEMS = [
-  { q: "Les manipulations sont-elles adaptées aux personnes âgées ?", a: "Oui. L'ostéopathe adapte toujours ses techniques à l'âge et à l'état de santé. Chez les seniors, on privilégie des techniques douces (musculaires, fasciales, mobilisations) et on évite les manipulations à fort impact lorsqu'il existe de l'ostéoporose ou des antécédents. Votre confort et votre sécurité sont prioritaires." },
-  { q: "L'ostéo peut-elle soulager l'arthrose ?", a: "L'ostéopathie ne guérit pas l'arthrose, mais elle peut soulager les douleurs et améliorer la mobilité en travaillant sur les tissus autour de l'articulation, la posture et les compensations. Beaucoup de seniors constatent une réduction de la gêne au quotidien. Un avis médical est recommandé en cas d'arthrose sévère ou de prothèse." },
+  { q: "Les manipulations sont-elles adaptées aux personnes âgées ?", a: "Oui. L'ostéopathe à Valence adapte toujours ses techniques à l'âge et à l'état de santé. Chez les seniors, on privilégie des techniques douces (musculaires, fasciales, mobilisations) et on évite les manipulations à fort impact lorsqu'il existe de l'ostéoporose ou des antécédents. Votre confort et votre sécurité sont prioritaires." },
+  { q: "L'ostéo peut-elle soulager l'arthrose ?", a: "L'ostéopathie ne guérit pas l'arthrose, mais elle peut soulager les douleurs et améliorer la mobilité en travaillant sur les tissus autour de l'articulation, la posture et les compensations. Beaucoup de seniors à Valence constatent une réduction de la gêne au quotidien. Un avis médical est recommandé en cas d'arthrose sévère ou de prothèse." },
   { q: "Peut-on consulter après une prothèse de hanche ?", a: "Oui, après la période de consolidation indiquée par le chirurgien (souvent quelques semaines à quelques mois). L'ostéopathe travaille alors en douceur sur le bassin, le dos et les membres pour rééquilibrer la posture et favoriser une bonne récupération. Les techniques sont adaptées et il n'y a pas de manipulation directe sur la prothèse." },
   { q: "L'ostéo se déplace à domicile pour les seniors ?", a: "Oui. Des consultations à domicile sont possibles à Valence et dans les environs pour les personnes qui ne peuvent pas se déplacer. Le tarif à domicile est de 75€ (déplacement inclus). Contactez le cabinet pour organiser une séance à domicile." },
-  { q: "À quelle fréquence consulter quand on est senior ?", a: "Cela dépend de votre état. Pour un suivi préventif, 2 à 3 séances par an sont souvent suffisantes. En cas de douleur ou de pathologie chronique, nous pouvons proposer un rythme plus rapproché au début puis un espacement. L'ostéopathe vous conseille en fonction de votre situation." },
+  { q: "À quelle fréquence consulter quand on est senior ?", a: "Cela dépend de votre état. Pour un suivi préventif, 2 à 3 séances par an sont souvent suffisantes. En cas de douleur ou de pathologie chronique, l'ostéopathe peut proposer un rythme plus rapproché au début puis un espacement. L'ostéopathe vous conseille en fonction de votre situation." },
   { q: "L'ostéo aide-t-elle à prévenir les chutes ?", a: "En partie. En améliorant la mobilité, l'équilibre et la perception du corps, l'ostéopathie peut contribuer à une meilleure stabilité à la marche et à une réduction du risque de chute. Elle ne remplace pas la rééducation ni les exercices d'équilibre prescrits par le médecin ou le kiné, mais elle les complète." },
 ];
 
@@ -65,7 +65,6 @@ const ALL_LINKS = [{ href: "/", label: "Accueil" }, { href: "/osteopathe-sportif
 export default function OsteopatheSeniorPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <FloatingCTA />
@@ -87,8 +86,8 @@ export default function OsteopatheSeniorPage() {
               <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Ostéopathie pour les seniors à Valence : confort et mobilité</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto" aria-hidden />
               <div className="mt-10 space-y-6 text-gray-600 leading-relaxed">
-                <p>Avec l&apos;âge, les articulations peuvent se raidir, l&apos;arthrose apparaître et les douleurs du dos ou des membres devenir plus fréquentes. L&apos;ostéopathe senior à Valence (26000) accompagne les personnes âgées avec des techniques adaptées : pas de manipulations brutales, mais des mobilisations douces, des techniques musculaires et fasciales et un travail sur la posture et l&apos;équilibre. Pour les douleurs dorsales, l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe du dos</Link> et l&apos;<Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe sportif</Link> partagent la même approche globale. L&apos;objectif est de maintenir ou retrouver une bonne mobilité, de soulager les douleurs et de contribuer à la prévention des chutes. Le cabinet est accessible et nous proposons également des consultations à domicile pour les personnes qui ne peuvent pas se déplacer.</p>
-                <p>Chaque séance au cabinet avenue Victor Hugo à Valence commence par un interrogatoire (antécédents, traitements, prothèses éventuelles) pour adapter au mieux le traitement. La consultation adulte est au tarif de 55€ ; la consultation à domicile à 75€. Une facture est remise pour le remboursement par votre mutuelle. Prenez rendez-vous en ligne ou par téléphone pour une séance d&apos;ostéopathie pour senior à Valence.</p>
+                <p>Avec l&apos;âge, les articulations peuvent se raidir, l&apos;arthrose apparaître et les douleurs du dos ou des membres devenir plus fréquentes. Votre <Link href="/" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe à Valence</Link> accompagne les seniors avec des techniques adaptées : pas de manipulations brutales, mais des mobilisations douces, des techniques musculaires et fasciales et un travail sur la posture et l&apos;équilibre. Pour les douleurs dorsales, l&apos;<Link href="/osteopathe-dos" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe du dos</Link> et l&apos;<Link href="/osteopathe-sportif" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe sportif</Link> partagent la même approche globale. Les seniors peuvent aussi bénéficier d&apos;un suivi post-partum via l&apos;<Link href="/osteopathe-femme-enceinte" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe femme enceinte</Link> pour les grands-mamans récentes. L&apos;objectif est de maintenir ou retrouver une bonne mobilité, de soulager les douleurs et de contribuer à la prévention des chutes. Le cabinet est accessible et des consultations à domicile sont proposées pour les personnes qui ne peuvent pas se déplacer.</p>
+                <p>Chaque séance au cabinet avenue Victor Hugo à Valence commence par un interrogatoire (antécédents, traitements, prothèses éventuelles) pour adapter au mieux le traitement. La consultation adulte est au tarif de 55€ ; la consultation à domicile à 75€. Une facture est remise pour le remboursement par votre mutuelle. Prenez rendez-vous avec votre <Link href="/" className="text-sage font-medium underline decoration-sage/40 underline-offset-2 hover:decoration-sage">ostéopathe à Valence</Link> en ligne ou par téléphone pour une séance adaptée aux seniors.</p>
               </div>
             </div>
           </SectionReveal>
@@ -114,7 +113,7 @@ export default function OsteopatheSeniorPage() {
 
           <SectionReveal className="py-16 md:py-20 px-4 md:px-8 bg-offwhite" animate="fade-up">
             <div className="mx-auto max-w-2xl">
-              <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Témoignage patient</h2>
+              <h2 className="text-2xl font-light text-gray-800 md:text-3xl text-center mb-4">Témoignage – Ostéopathe Senior à Valence</h2>
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-8" aria-hidden />
               <div className="card-shadow card-hover rounded-2xl bg-white p-6 border border-bluegray/20 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300">
                 <div className="testimonial-stars flex gap-1 mb-3">
@@ -143,8 +142,13 @@ export default function OsteopatheSeniorPage() {
               <span className="block w-16 h-1 bg-gold rounded-full mt-3 mx-auto mb-6" aria-hidden />
               <p className="text-gray-600 mb-6">Consultation adulte : <strong className="text-gold text-2xl">55€</strong>. À domicile : <strong className="text-gold text-2xl">75€</strong>. Facture pour mutuelle.</p>
               <Link href="/#contact" className="btn-cta inline-block rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90">Demander un rendez-vous</Link>
+              <p className="mt-3 text-sm text-gray-600">
+                ou appelez le <a href="tel:+33757905188" className="text-sage font-medium underline">+33 7 57 90 51 88</a>
+              </p>
             </div>
           </SectionReveal>
+
+          <LatestArticlesBanner />
 
           <SectionReveal className="py-16 md:py-20 px-4 md:px-8 bg-offwhite border-t border-bluegray/20" animate="fade-up">
             <div className="mx-auto max-w-4xl">

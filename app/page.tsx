@@ -633,120 +633,126 @@ export default function Home() {
 					{/* Hero */}
 					<section
 						id="accueil"
-						className="relative min-h-screen flex flex-col justify-center px-4 pt-24 pb-16 md:px-8 overflow-hidden"
+						className="relative min-h-[85vh] md:min-h-[95vh] flex items-center overflow-hidden bg-[#0f2d40] pt-24"
 					>
-						{/* Image de fond */}
-						<div className="absolute inset-0 z-0">
-							<Image
-								src="/cabinet-hero.png"
-								alt="Cabinet d'ostéopathie de Pauline Odeyer – salle de consultation"
-								fill
-								className="object-cover object-center hero-parallax"
-								priority
-								quality={90}
-								sizes="100vw"
-							/>
-						</div>
-						{/* Overlay dégradé — plus dense à gauche pour le texte, transparent à droite pour le portrait */}
-						<div
-							className="absolute inset-0 z-[1] bg-gradient-to-r from-black/80 via-black/50 to-black/20"
-							aria-hidden
-						/>
-						<div
-							className="absolute inset-0 z-[1] bg-gradient-to-b from-black/40 via-transparent to-black/50"
-							aria-hidden
-						/>
-
-						{/* Contenu — split layout */}
-						<div className="relative z-10 mx-auto max-w-6xl w-full flex flex-col md:flex-row items-center md:items-end gap-10 md:gap-16">
-							{/* Colonne gauche — texte */}
-							<div className="flex-1 text-left">
-								<p className="text-sm font-medium tracking-[0.2em] uppercase text-white/60 mb-4 [text-shadow:_0_1px_4px_rgba(0,0,0,0.8)]">
-									Ostéopathe D.O.
+						{/* Section gauche - Contenu */}
+						<div className="relative z-20 w-full md:w-3/5 px-6 md:px-16 lg:px-24 py-32 md:py-0">
+							<div className="max-w-xl">
+								<p className="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-white/50 mb-6">
+									Pauline Odeyer · Ostéopathe D.O. · Valence
 								</p>
-								<h1 className="text-4xl font-light tracking-tight text-white md:text-5xl lg:text-6xl [text-shadow:_0_2px_20px_rgba(0,0,0,0.5)] leading-tight">
-									Pauline
-									<br />
-									Odeyer
+								<h1 className="text-4xl md:text-5xl lg:text-7xl font-light text-white leading-[1.1] mb-8">
+									Soins ostéopathiques<br />
+									<span className="font-semibold italic text-[#e29933]">personnalisés</span> à Valence
 								</h1>
-								<div
-									className="w-12 h-0.5 bg-[#c9a96e] mt-5 mb-5"
-									aria-hidden
-								/>
-								<p className="text-lg md:text-xl text-white/90 font-light [text-shadow:_0_1px_8px_rgba(0,0,0,0.7)]">
-									Valence (26) · Saint Lattier (38)
+								<p className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed max-w-lg font-light">
+									Vous souffrez de douleurs persistantes ? Je vous accompagne vers un soulagement durable grâce à des techniques douces et adaptées à votre corps.
 								</p>
-								<p className="mt-4 max-w-md text-base md:text-lg text-white/85 leading-relaxed [text-shadow:_0_2px_8px_rgba(0,0,0,0.8)]">
-									Retrouvez mobilité, confort et bien-être grâce à des soins
-									ostéopathiques personnalisés — du nourrisson au senior.
-								</p>
-								<div className="mt-10 flex flex-wrap gap-4">
+								
+								<div className="flex flex-wrap gap-5 mb-12">
 									<a
 										href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="btn-cta inline-block rounded-full bg-sage px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-sage/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent transition"
+										className="bg-[#e29933] hover:bg-[#d18a2d] text-white px-10 py-5 rounded-lg font-bold shadow-xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-95"
 									>
 										Prendre rendez-vous
 									</a>
 									<a
-										href="tel:+33769341945"
-										className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-4 text-base font-medium text-white hover:bg-white/10 transition focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+										href="#services"
+										className="border-2 border-white/20 hover:bg-white/5 text-white px-10 py-5 rounded-lg font-bold transition-all backdrop-blur-sm"
 									>
-										<svg
-											className="w-4 h-4"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-											aria-hidden
-										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-											/>
-										</svg>
-										07 69 34 19 45
+										Voir tous les services
 									</a>
 								</div>
-							</div>
 
-							{/* Colonne droite — portrait */}
-							<div className="relative flex-shrink-0 flex justify-center md:justify-end w-full md:w-auto">
-								{/* Halo décoratif */}
-								<div
-									className="absolute inset-0 rounded-full bg-sage/20 blur-3xl scale-110 opacity-60 pointer-events-none"
-									aria-hidden
-								/>
-								{/* Cadre portrait */}
-								<div className="relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[26rem] lg:w-96 lg:h-[30rem] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/20">
-									<Image
-										src="/hero.webp"
-										alt="Pauline Odeyer, ostéopathe D.O. à Valence et Saint Lattier"
-										fill
-										className="object-cover object-top"
-										priority
-										quality={95}
-										sizes="(max-width: 768px) 288px, (max-width: 1024px) 320px, 384px"
-									/>
-									{/* Subtil dégradé bas du portrait */}
-									<div
-										className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"
-										aria-hidden
-									/>
-								</div>
-								{/* Badge flottant */}
-								<div className="absolute -bottom-4 -left-4 md:bottom-6 md:-left-6 bg-white/95 backdrop-blur-sm rounded-2xl px-5 py-3 shadow-xl flex items-center gap-3">
-									<div className="w-2.5 h-2.5 rounded-full bg-sage animate-pulse flex-shrink-0" />
-									<p className="text-sm font-semibold text-gray-800 whitespace-nowrap">
-										Disponible sur Doctolib
-									</p>
+								<div className="flex flex-wrap gap-4 md:gap-6">
+									{[
+										{ text: "Diplômée D.O. France" },
+										{ text: "Valence & Saint Lattier" },
+										{ text: "Remboursé mutuelles" }
+									].map((item) => (
+										<div key={item.text} className="flex items-center gap-3 bg-white/5 border border-white/10 px-5 py-3 rounded-full text-sm font-medium text-white/90 backdrop-blur-md">
+											<svg className="w-5 h-5 text-[#e29933]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+											</svg>
+											{item.text}
+										</div>
+									))}
 								</div>
 							</div>
 						</div>
 
-						<SectionWave fillClass="fill-offwhite" />
+						{/* Section droite - Image & Slant */}
+						<div className="absolute right-0 top-0 bottom-0 w-full md:w-[45%] z-10 overflow-hidden hidden md:block">
+							<div className="absolute inset-0 z-0">
+								<Image 
+									src="/hero-bg.png"
+									alt="Ambiance cabinet ostéopathie"
+									fill
+									className="object-cover"
+									priority
+									quality={100}
+								/>
+								<div className="absolute inset-0 bg-black/10" />
+							</div>
+							{/* Slant effect using clip-path */}
+							<div 
+								className="absolute inset-0 bg-[#0f2d40] z-10"
+								style={{ clipPath: 'polygon(0 0, 18% 0, -5% 100%, 0 100%)' }}
+							/>
+						</div>
+
+						{/* Floating Portrait Card */}
+						<div className="absolute top-1/2 left-[56%] lg:left-[59%] transform -translate-y-1/2 z-30 hidden xl:block">
+							<div className="bg-white rounded-3xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] p-10 max-w-sm text-center relative overflow-hidden group">
+								{/* Subtle top bar decorative */}
+								<div className="absolute top-0 left-0 right-0 h-1.5 bg-[#e29933]" />
+								
+								<div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl mb-6 ring-4 ring-[#0f2d40]/5">
+									<Image 
+										src="/hero.webp" 
+										alt="Pauline Odeyer" 
+										width={128} 
+										height={128} 
+										className="object-cover transition-transform group-hover:scale-110 duration-500" 
+									/>
+								</div>
+								
+								<h3 className="text-2xl font-bold text-[#0f2d40] mb-1">Pauline Odeyer</h3>
+								<p className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-6">Ostéopathe D.O.</p>
+								
+								<div className="text-left space-y-5 border-t border-gray-100 pt-7">
+									<p className="text-gray-600 leading-relaxed text-sm italic">
+										&quot;Installée à Valence, je mets mon expertise à votre service pour une prise en charge complète et bienveillante de vos douleurs.&quot;
+									</p>
+									<div className="flex flex-col gap-3">
+										<div className="flex items-center gap-3 text-sm text-[#0f2d40] font-bold">
+											<div className="w-2 h-2 rounded-full bg-[#e29933]" />
+											Approche douce & globale
+										</div>
+										<div className="flex items-center gap-3 text-sm text-[#0f2d40] font-bold">
+											<div className="w-2 h-2 rounded-full bg-[#e29933]" />
+											Expertise nourrissons & sportifs
+										</div>
+									</div>
+									<div className="pt-2">
+										<a 
+											href="#contact" 
+											className="inline-block text-[#e29933] font-bold text-sm hover:text-[#d18a2d] transition-colors"
+										>
+											Me contacter par message →
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce hidden md:block">
+							<svg className="w-6 h-6 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+							</svg>
+						</div>
 					</section>
 
 					{/* Présentation */}

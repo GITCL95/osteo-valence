@@ -163,7 +163,7 @@ export default function NavBar() {
               href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-sage px-5 py-2.5 text-sm font-medium text-white shadow-md transition hover:bg-sage/90"
+              className="rounded-full bg-[#5d2ca8] px-6 py-2.5 text-sm font-bold text-white shadow-lg transition hover:bg-[#4a2388] hover:scale-105 active:scale-95"
             >
               Prendre RDV
             </a>

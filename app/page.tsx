@@ -633,48 +633,118 @@ export default function Home() {
 					{/* Hero */}
 					<section
 						id="accueil"
-						className="relative min-h-[85vh] md:min-h-[95vh] flex items-center overflow-hidden bg-[#0f2d40] pt-24"
+						className="relative min-h-[100vh] md:min-h-[95vh] flex items-center overflow-hidden bg-[#0f2d40] pt-24"
 					>
-						{/* Section gauche - Contenu */}
-						<div className="relative z-20 w-full md:w-3/5 px-6 md:px-16 lg:px-24 py-32 md:py-0">
-							<div className="max-w-xl">
-								<p className="text-xs md:text-sm font-bold tracking-[0.3em] uppercase text-white/50 mb-6">
+						{/* Background Image for Mobile */}
+						<div className="absolute inset-0 z-0 md:hidden">
+							<Image
+								src="/hero-bg.webp"
+								alt=""
+								fill
+								className="object-cover opacity-40"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-b from-[#0f2d40] via-transparent to-[#0f2d40]" />
+						</div>
+
+						{/* Desktop Background & Slant */}
+						<div className="absolute inset-0 z-10 hidden md:block">
+							<div className="flex h-full w-full">
+								{/* Left side stays blue */}
+								<div className="w-[55%] h-full bg-[#0f2d40]" />
+								{/* Right side is the image */}
+								<div className="relative w-[45%] h-full">
+									<Image
+										src="/hero-bg.webp"
+										alt="Ambiance cabinet ostéopathie"
+										fill
+										className="object-cover"
+										priority
+										quality={100}
+									/>
+									<div className="absolute inset-0 bg-black/10" />
+								</div>
+							</div>
+							{/* Slant Overlay */}
+							<div
+								className="absolute inset-0 bg-[#0f2d40] z-10"
+								style={{ clipPath: "polygon(0 0, 62% 0, 52% 100%, 0 100%)" }}
+							/>
+						</div>
+
+						{/* Main Content Container */}
+						<div className="container mx-auto px-6 md:px-16 lg:px-24 relative z-20">
+							<div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+								{/* Mobile Portrait */}
+								<div className="md:hidden mb-8 flex justify-center">
+									<div className="w-28 h-28 rounded-full overflow-hidden border-4 border-[#e29933] shadow-2xl">
+										<Image
+											src="/hero.webp"
+											alt="Pauline Odeyer"
+											width={112}
+											height={112}
+											className="object-cover"
+										/>
+									</div>
+								</div>
+
+								<p className="text-[10px] md:text-sm font-bold tracking-[0.3em] uppercase text-white/50 mb-6">
 									Pauline Odeyer · Ostéopathe D.O. · Valence
 								</p>
-								<h1 className="text-4xl md:text-5xl lg:text-7xl font-light text-white leading-[1.1] mb-8">
-									Soins ostéopathiques<br />
-									<span className="font-semibold italic text-[#e29933]">personnalisés</span> à Valence
+								<h1 className="text-4xl md:text-6xl lg:text-[5rem] font-light text-white leading-[1.02] mb-10">
+									Soins
+									<br />
+									ostéopathiques
+									<br />
+									<span className="font-semibold italic font-serif text-[#e29933]">
+										personnalisés
+									</span>{" "}
+									à Valence
 								</h1>
-								<p className="text-lg md:text-xl text-white/70 mb-12 leading-relaxed max-w-lg font-light">
-									Vous souffrez de douleurs persistantes ? Je vous accompagne vers un soulagement durable grâce à des techniques douces et adaptées à votre corps.
+								<p className="text-lg md:text-xl text-white/70 mb-14 leading-relaxed max-w-lg font-light mx-auto md:mx-0">
+									Vous souffrez de douleurs persistantes ? Je vous accompagne
+									vers un soulagement durable grâce à des techniques douces et
+									adaptées à votre corps.
 								</p>
-								
-								<div className="flex flex-wrap gap-5 mb-12">
+
+								<div className="flex flex-col sm:flex-row flex-wrap gap-6 mb-16 justify-center md:justify-start">
 									<a
 										href="https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="bg-[#e29933] hover:bg-[#d18a2d] text-white px-10 py-5 rounded-lg font-bold shadow-xl shadow-black/20 transition-all hover:-translate-y-1 active:scale-95"
+										className="bg-[#e29933] hover:bg-[#d18a2d] text-white px-8 md:px-12 py-4 md:py-6 rounded-xl font-bold shadow-2xl shadow-black/30 transition-all hover:-translate-y-1 active:scale-95 min-w-[260px] text-lg"
 									>
 										Prendre rendez-vous
 									</a>
 									<a
 										href="#services"
-										className="border-2 border-white/20 hover:bg-white/5 text-white px-10 py-5 rounded-lg font-bold transition-all backdrop-blur-sm"
+										className="border-2 border-white/20 hover:bg-white/5 text-white px-8 md:px-12 py-4 md:py-6 rounded-xl font-bold transition-all backdrop-blur-sm min-w-[260px] text-lg"
 									>
 										Voir tous les services
 									</a>
 								</div>
 
-								<div className="flex flex-wrap gap-4 md:gap-6">
+								<div className="flex flex-wrap gap-4 md:gap-5 justify-center md:justify-start">
 									{[
 										{ text: "Diplômée D.O. France" },
 										{ text: "Valence & Saint Lattier" },
-										{ text: "Remboursé mutuelles" }
+										{ text: "Remboursé mutuelles" },
 									].map((item) => (
-										<div key={item.text} className="flex items-center gap-3 bg-white/5 border border-white/10 px-5 py-3 rounded-full text-sm font-medium text-white/90 backdrop-blur-md">
-											<svg className="w-5 h-5 text-[#e29933]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+										<div
+											key={item.text}
+											className="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-4 rounded-full text-xs font-bold text-white/90 backdrop-blur-md"
+										>
+											<svg
+												className="w-5 h-5 text-[#e29933]"
+												fill="none"
+												stroke="currentColor"
+												viewBox="0 0 24 24"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													strokeWidth={3}
+													d="M5 13l4 4L19 7"
+												/>
 											</svg>
 											{item.text}
 										</div>
@@ -683,63 +753,49 @@ export default function Home() {
 							</div>
 						</div>
 
-						{/* Section droite - Image & Slant */}
-						<div className="absolute right-0 top-0 bottom-0 w-full md:w-[45%] z-10 overflow-hidden hidden md:block">
-							<div className="absolute inset-0 z-0">
-								<Image 
-									src="/hero-bg.png"
-									alt="Ambiance cabinet ostéopathie"
-									fill
-									className="object-cover"
-									priority
-									quality={100}
-								/>
-								<div className="absolute inset-0 bg-black/10" />
-							</div>
-							{/* Slant effect using clip-path */}
-							<div 
-								className="absolute inset-0 bg-[#0f2d40] z-10"
-								style={{ clipPath: 'polygon(0 0, 18% 0, -5% 100%, 0 100%)' }}
-							/>
-						</div>
-
-						{/* Floating Portrait Card */}
-						<div className="absolute top-1/2 left-[56%] lg:left-[59%] transform -translate-y-1/2 z-30 hidden xl:block">
-							<div className="bg-white rounded-3xl shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] p-10 max-w-sm text-center relative overflow-hidden group">
+						{/* Floating Portrait Card (Desktop) */}
+						<div className="absolute top-[55%] left-[62%] lg:left-[64%] transform -translate-y-1/2 -translate-x-1/2 z-30 hidden xl:block">
+							<div className="bg-white rounded-[2rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] p-12 max-w-[380px] text-center relative overflow-hidden group">
 								{/* Subtle top bar decorative */}
-								<div className="absolute top-0 left-0 right-0 h-1.5 bg-[#e29933]" />
-								
-								<div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl mb-6 ring-4 ring-[#0f2d40]/5">
-									<Image 
-										src="/hero.webp" 
-										alt="Pauline Odeyer" 
-										width={128} 
-										height={128} 
-										className="object-cover transition-transform group-hover:scale-110 duration-500" 
+								<div className="absolute top-0 left-0 right-0 h-2 bg-[#e29933]" />
+
+								<div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl mb-8 ring-8 ring-[#0f2d40]/5">
+									<Image
+										src="/hero.webp"
+										alt="Pauline Odeyer"
+										width={144}
+										height={144}
+										className="object-cover transition-transform group-hover:scale-110 duration-700"
 									/>
 								</div>
-								
-								<h3 className="text-2xl font-bold text-[#0f2d40] mb-1">Pauline Odeyer</h3>
-								<p className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em] mb-6">Ostéopathe D.O.</p>
-								
-								<div className="text-left space-y-5 border-t border-gray-100 pt-7">
-									<p className="text-gray-600 leading-relaxed text-sm italic">
-										&quot;Installée à Valence, je mets mon expertise à votre service pour une prise en charge complète et bienveillante de vos douleurs.&quot;
+
+								<h3 className="text-3xl font-bold text-[#0f2d40] mb-1">
+									Pauline Odeyer
+								</h3>
+								<p className="text-sm font-bold text-gray-400 uppercase tracking-[0.3em] mb-8">
+									Ostéopathe D.O.
+								</p>
+
+								<div className="text-left space-y-6 border-t border-gray-100 pt-10">
+									<p className="text-gray-600 leading-relaxed text-sm italic font-medium">
+										&quot;Installée à Valence, je mets mon expertise à votre
+										service pour une prise en charge complète et bienveillante
+										de vos douleurs.&quot;
 									</p>
-									<div className="flex flex-col gap-3">
-										<div className="flex items-center gap-3 text-sm text-[#0f2d40] font-bold">
-											<div className="w-2 h-2 rounded-full bg-[#e29933]" />
+									<div className="flex flex-col gap-4">
+										<div className="flex items-center gap-4 text-sm text-[#0f2d40] font-bold">
+											<div className="w-2.5 h-2.5 rounded-full bg-[#e29933]" />
 											Approche douce & globale
 										</div>
-										<div className="flex items-center gap-3 text-sm text-[#0f2d40] font-bold">
-											<div className="w-2 h-2 rounded-full bg-[#e29933]" />
+										<div className="flex items-center gap-4 text-sm text-[#0f2d40] font-bold">
+											<div className="w-2.5 h-2.5 rounded-full bg-[#e29933]" />
 											Expertise nourrissons & sportifs
 										</div>
 									</div>
-									<div className="pt-2">
-										<a 
-											href="#contact" 
-											className="inline-block text-[#e29933] font-bold text-sm hover:text-[#d18a2d] transition-colors"
+									<div className="pt-4">
+										<a
+											href="#contact"
+											className="inline-block text-[#e29933] font-bold text-sm hover:text-[#d18a2d] transition-colors border-b-2 border-transparent hover:border-[#e29933] pb-1"
 										>
 											Me contacter par message →
 										</a>
@@ -747,10 +803,20 @@ export default function Home() {
 								</div>
 							</div>
 						</div>
-						
+
 						<div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce hidden md:block">
-							<svg className="w-6 h-6 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+							<svg
+								className="w-6 h-6 text-white/30"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth={2}
+									d="M19 14l-7 7m0 0l-7-7m7 7V3"
+								/>
 							</svg>
 						</div>
 					</section>

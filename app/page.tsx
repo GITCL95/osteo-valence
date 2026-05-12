@@ -633,7 +633,7 @@ export default function Home() {
 					{/* Hero */}
 					<section
 						id="accueil"
-						className="relative min-h-[100vh] md:min-h-[95vh] flex items-center overflow-hidden bg-[#0f2d40] pt-24"
+						className="relative min-h-[100vh] md:min-h-[95vh] flex items-center overflow-hidden bg-[#0f2d40] pt-32 pb-20 md:pt-24 md:pb-0"
 					>
 						{/* Background Image for Mobile */}
 						<div className="absolute inset-0 z-0 md:hidden">
@@ -667,13 +667,13 @@ export default function Home() {
 							{/* Slant Overlay */}
 							<div
 								className="absolute inset-0 bg-[#0f2d40] z-10"
-								style={{ clipPath: "polygon(0 0, 62% 0, 52% 100%, 0 100%)" }}
+								style={{ clipPath: "polygon(0 0, 58% 0, 48% 100%, 0 100%)" }}
 							/>
 						</div>
 
 						{/* Main Content Container */}
 						<div className="container mx-auto px-6 md:px-16 lg:px-24 relative z-20">
-							<div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left">
+							<div className="max-w-2xl mx-auto md:mx-0 text-center md:text-left md:pb-0">
 								{/* Mobile Portrait */}
 								<div className="md:hidden mb-8 flex justify-center">
 									<div className="w-28 h-28 rounded-full overflow-hidden border-4 border-[#e29933] shadow-2xl">
@@ -754,17 +754,17 @@ export default function Home() {
 						</div>
 
 						{/* Floating Portrait Card (Desktop) */}
-						<div className="absolute top-[55%] left-[62%] lg:left-[64%] transform -translate-y-1/2 -translate-x-1/2 z-30 hidden xl:block">
-							<div className="bg-white rounded-[2rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] p-12 max-w-[380px] text-center relative overflow-hidden group">
+						<div className="absolute top-1/2 right-[8%] lg:right-[12%] transform -translate-y-1/2 z-30 hidden xl:block">
+							<div className="bg-white/95 backdrop-blur-md rounded-[3.5rem] shadow-[0_60px_120px_-20px_rgba(0,0,0,0.4)] p-12 max-w-[380px] text-center relative overflow-hidden group border border-white/10">
 								{/* Subtle top bar decorative */}
 								<div className="absolute top-0 left-0 right-0 h-2 bg-[#e29933]" />
 
-								<div className="w-36 h-36 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl mb-8 ring-8 ring-[#0f2d40]/5">
+								<div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white shadow-2xl mb-8 ring-8 ring-[#0f2d40]/5">
 									<Image
 										src="/hero.webp"
 										alt="Pauline Odeyer"
-										width={144}
-										height={144}
+										width={160}
+										height={160}
 										className="object-cover transition-transform group-hover:scale-110 duration-700"
 									/>
 								</div>

@@ -54,6 +54,15 @@ export default function Footer() {
         <div className="mt-8 pt-6 border-t border-gray-600 text-center text-sm text-gray-500">
           <p>© 2026 Pauline Odeyer — Ostéopathe D.O. à Valence (26) et Saint Lattier (38)</p>
           <p className="mt-1">Dernière mise à jour : avril 2026</p>
+          <p className="mt-1">
+            Site créé par{" "}
+            <a
+              href="https://www.alizee-web.com/"
+              className="hover:text-gold transition underline"
+            >
+              Alizée Web
+            </a>
+          </p>
         </div>
       </div>
     </footer>

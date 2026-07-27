@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const PHONE = "+33769341945";
 const DOCTOLIB = "https://www.doctolib.fr/osteopathe/saint-lattier/pauline-odeyer";
 
 export default function Footer() {
+  const pathname = usePathname();
   return (
     <footer className="bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 py-12 px-4 md:px-8">
       <div className="mx-auto max-w-6xl">
@@ -54,15 +58,17 @@ export default function Footer() {
         <div className="mt-8 pt-6 border-t border-gray-600 text-center text-sm text-gray-500">
           <p>© 2026 Pauline Odeyer — Ostéopathe D.O. à Valence (26) et Saint Lattier (38)</p>
           <p className="mt-1">Dernière mise à jour : avril 2026</p>
-          <p className="mt-1">
-            Site créé par{" "}
-            <a
-              href="https://www.alizee-web.com/"
-              className="hover:text-gold transition underline"
-            >
-              Alizée Web
-            </a>
-          </p>
+          {pathname === "/" && (
+            <p className="mt-1">
+              Site créé par{" "}
+              <a
+                href="https://www.alizee-web.com/"
+                className="hover:text-gold transition underline"
+              >
+                Alizée Web
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </footer>
